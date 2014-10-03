@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
         <title>PHP Frameworks Speed Benchmark</title>
-        <link rel="stylesheet" type="text/css" href="style/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
         <script src="js/main.js"></script>
         <script src="js/jquery-1.11.1.min.js"></script>
     </head>
