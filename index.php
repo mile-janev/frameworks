@@ -9,6 +9,6 @@
         <script src="js/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-        test
+        Project is started
     </body>
 </html>
