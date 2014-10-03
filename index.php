@@ -9,6 +9,7 @@
         <script src="js/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-        Project is started
+        <div>Project is started</div>
+        <?php include_once 'menu.php'; ?>
     </body>
 </html>
