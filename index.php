@@ -4,12 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
         <title>PHP Frameworks Speed Benchmark</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <script src="js/main.js"></script>
         <script src="js/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-        <div>Project is started</div>
-        <?php include_once 'menu.php'; ?>
+        <div id="menu"><?php include_once 'menu.php'; ?></div>
+        <div class="body">Project is started</div>
     </body>
 </html>

@@ -8,3 +8,191 @@ and open the template in the editor.
     Author     : mile
 */
 
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+  height: 100%;
+  font-family: 'Muli';
+  font-size: 12px;
+  font-weight: 300 !important;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    text-align: justify;
+}
+:focus {/* remember to define focus styles! */
+
+}
+.wpcf7 :focus{
+    background-color: #f8dadb;
+    border: 1px solid;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+body {
+    background: #FFFFFF;
+    line-height: 1;
+    color: #1d1919;
+    font-family: "Tahoma";
+    font-size: 13px;
+    line-height: 1.5;
+}
+ol, ul {
+    list-style: none;
+}
+table {/* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    font-weight: 300;
+    text-align: left;
+    vertical-align: middle;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+a img {
+    border: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+p{
+    margin-bottom: 1em;
+}
+h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 24px; 
+    margin-top: 9px;
+    margin-bottom: 18px;
+}
+h3{
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+h4{
+    font-size: 16px;
+    margin-top: 7px;
+    margin-bottom: 14px;
+}
+h5{
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+h6{
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+a{
+    color: #ea3309;
+}
+table tr th{
+    background: #1e1a1b;
+    color: #ffffff;
+}
+
+/*My style start from here*/
+/*Menu design*/
+#menu{
+    float: left;
+    width: 100%;
+    position: fixed;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #b3b3b3;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);	
+    box-shadow: 0px 2px 1px #cdcdcd;
+}
+#mainMenu{
+    margin: 0 auto;
+    padding: 0;
+    width: 480px;
+}
+#mainMenu li{
+    list-style-type: none;
+    float: left;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+#mainMenu li a{
+    float: left;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #1a5e83;
+}
+#titleSite{
+    position: absolute;
+    float: left;
+}
+#titleSite a{
+    text-decoration: none;
+    padding: 10px 20px;
+    float: left;
+    color: #1a5e83;
+    font-weight: bold;
+    font-size: 15px;
+}
+#mainMenu li > a
+{
+    color: #1a5e83;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+#mainMenu li > a:hover, #mainMenu li.active a
+{
+    color: #1a5e83;
+    background: #fff;
+    border-top: 3px solid #1a5e83;
+    padding-top: 7px;
+}
+
+.body{
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
