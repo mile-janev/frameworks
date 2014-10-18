@@ -1,27 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "comment".
+ * This is the model class for table "m_user".
  *
- * The followings are the available columns in table 'comment':
+ * The followings are the available columns in table 'm_user':
  * @property string $id
- * @property string $comment
- * @property string $created
- * @property string $user_id
- * @property string $post_id
+ * @property string $username
+ * @property string $password
+ * @property string $firstname
+ * @property string $lastname
  *
  * The followings are the available model relations:
- * @property User $user
- * @property Post $post
+ * @property MComment[] $mComments
+ * @property MPost[] $mPosts
  */
-class Comment extends CActiveRecord
+class MUser extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'comment';
+		return 'm_user';
 	}
 
 	/**
@@ -32,11 +32,11 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('comment, created, user_id, post_id', 'required'),
-			array('user_id, post_id', 'length', 'max'=>10),
+			array('username, password, firstname, lastname', 'required'),
+			array('username, password, firstname, lastname', 'length', 'max'=>64),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, comment, created, user_id, post_id', 'safe', 'on'=>'search'),
+			array('id, username, password, firstname, lastname', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,8 +48,8 @@ class Comment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
-			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
+			'mComments' => array(self::HAS_MANY, 'MComment', 'user_id'),
+			'mPosts' => array(self::HAS_MANY, 'MPost', 'user_id'),
 		);
 	}
 
@@ -60,10 +60,10 @@ class Comment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'comment' => 'Comment',
-			'created' => 'Created',
-			'user_id' => 'User',
-			'post_id' => 'Post',
+			'username' => 'Username',
+			'password' => 'Password',
+			'firstname' => 'Firstname',
+			'lastname' => 'Lastname',
 		);
 	}
 
@@ -86,10 +86,10 @@ class Comment extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('comment',$this->comment,true);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('post_id',$this->post_id,true);
+		$criteria->compare('username',$this->username,true);
+		$criteria->compare('password',$this->password,true);
+		$criteria->compare('firstname',$this->firstname,true);
+		$criteria->compare('lastname',$this->lastname,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -100,7 +100,7 @@ class Comment extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Comment the static model class
+	 * @return MUser the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "post".
+ * This is the model class for table "l_post".
  *
- * The followings are the available columns in table 'post':
+ * The followings are the available columns in table 'l_post':
  * @property string $id
  * @property string $title
  * @property string $content
@@ -11,17 +11,17 @@
  * @property string $user_id
  *
  * The followings are the available model relations:
- * @property Comment[] $comments
- * @property User $user
+ * @property LComment[] $lComments
+ * @property LUser $user
  */
-class Post extends CActiveRecord
+class LPost extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'post';
+		return 'l_post';
 	}
 
 	/**
@@ -49,8 +49,8 @@ class Post extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'comments' => array(self::HAS_MANY, 'Comment', 'post_id'),
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'lComments' => array(self::HAS_MANY, 'LComment', 'post_id'),
+			'user' => array(self::BELONGS_TO, 'LUser', 'user_id'),
 		);
 	}
 
@@ -101,7 +101,7 @@ class Post extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Post the static model class
+	 * @return LPost the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
