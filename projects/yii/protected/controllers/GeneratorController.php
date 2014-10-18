@@ -37,7 +37,7 @@ class GeneratorController extends Controller
 		);
 	}
         
-        public function actionUser($type="S", $records=3)
+        public function actionUser($type="L", $records=1000000)
         {
             for ($i=0; $i<$records; $i++) {
                 $randomNumber = Generator::getRandomNumber(10);
@@ -54,11 +54,17 @@ class GeneratorController extends Controller
                 $user->lastname = Generator::getRandomString(8);
                 $user->save();
             }
+            
+            echo "Finished";
         }
         
-        public function actionPost($type='S', $records=3)
+        public function actionPost($type='M', $records=1800)
         {
             for ($i=0; $i<$records; $i++) {
+                $criteria1 = null;
+                $user = null;
+                $post = null;
+                
                 $criteria1 = new CDbCriteria();
                 $criteria1->order = "RAND()";
                 $criteria1->limit = 1;
@@ -79,11 +85,18 @@ class GeneratorController extends Controller
                 $post->user_id = $user->id;
                 $post->save();
             }
+            
+            echo "Finished";
         }
         
-        public function actionComment($type='S', $records=3)
+        public function actionComment($type='M', $records=1000)
         {
             for ($i=0; $i<$records; $i++) {
+                $criteria1 = null;
+                $user = null;
+                $post = null;
+                $comment = null;
+                
                 $criteria1 = new CDbCriteria();
                 $criteria1->order = "RAND()";
                 $criteria1->limit = 1;
@@ -112,6 +125,8 @@ class GeneratorController extends Controller
                 $comment->post_id = $post->id;
                 $comment->save();
             }
+            
+            echo "Finished";
         }
         
 }
