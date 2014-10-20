@@ -106,4 +106,51 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        public function actionUser()
+        {
+//            $starttime = microtime(true);
+//            
+//            $criteria = new CDbCriteria();
+//            $criteria->select = "*";
+//            $criteria->addCondition(array("id"=>8));
+//            $data = SUser::model()->find($criteria);
+//            
+//            $endtime = microtime(TRUE);
+//            
+//            echo $endtime - $starttime;
+            
+            $criteria = new CDbCriteria();
+            $criteria->select = "*";
+//            $criteria->addCondition(array("id"=>99));
+            
+            $s=0;
+            $m=0;
+            $l=0;
+            $t=60;
+            
+            $small = microtime(true)+$t;
+            while ($small >= microtime(true)) {
+                $criteria = new CDbCriteria();
+                SPost::model()->find($criteria);
+                $s++;
+            }
+            
+            $medium = microtime(true)+$t;
+            while ($medium >= microtime(true)) {
+                MPost::model()->find($criteria);
+                $m++;
+            }
+            
+            $large = microtime(true)+$t;
+            while ($large >= microtime(true)) {
+                LPost::model()->find($criteria);
+                $l++;
+            }
+            
+            echo "S: " . $s . "<br />";
+            echo "M: " . $m . "<br />";
+            echo "L: " . $l . "<br />";
+            
+        }
 }

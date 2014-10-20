@@ -37,7 +37,7 @@ class GeneratorController extends Controller
 		);
 	}
         
-        public function actionUser($type="L", $records=1000000)
+        public function actionUser($type="L", $records=999900)
         {
             for ($i=0; $i<$records; $i++) {
                 $randomNumber = Generator::getRandomNumber(10);
@@ -58,7 +58,7 @@ class GeneratorController extends Controller
             echo "Finished";
         }
         
-        public function actionPost($type='M', $records=22074)
+        public function actionPost($type='L', $records=999900)
         {
             for ($i=0; $i<$records; $i++) {
                 $criteria1 = null;
@@ -89,7 +89,7 @@ class GeneratorController extends Controller
             echo "Finished";
         }
         
-        public function actionComment($type='M', $records=1000)
+        public function actionComment($type='M', $records=200)
         {
             for ($i=0; $i<$records; $i++) {
                 $criteria1 = null;
