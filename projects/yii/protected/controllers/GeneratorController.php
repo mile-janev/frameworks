@@ -58,7 +58,7 @@ class GeneratorController extends Controller
             echo "Finished";
         }
         
-        public function actionPost($type='M', $records=1800)
+        public function actionPost($type='M', $records=22074)
         {
             for ($i=0; $i<$records; $i++) {
                 $criteria1 = null;
