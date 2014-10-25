@@ -47,32 +47,6 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * Displays the contact page
-	 */
-	public function actionContact()
-	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
-					"Reply-To: {$model->email}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
-		}
-		$this->render('contact',array('model'=>$model));
-	}
-
-	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
@@ -107,50 +81,169 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
         
-        public function actionUser()
+        /*Select one user with condition*/
+        public function actionUserSelect()
         {
-//            $starttime = microtime(true);
-//            
-//            $criteria = new CDbCriteria();
-//            $criteria->select = "*";
-//            $criteria->addCondition(array("id"=>8));
-//            $data = SUser::model()->find($criteria);
-//            
-//            $endtime = microtime(TRUE);
-//            
-//            echo $endtime - $starttime;
-            
-            $criteria = new CDbCriteria();
-            $criteria->select = "*";
-//            $criteria->addCondition(array("id"=>99));
-            
             $s=0;
             $m=0;
             $l=0;
-            $t=60;
+            $t=10;
+            $userId = 5000;
+            
+            $criteria = new CDbCriteria();
+            $criteria->select = "*";
             
             $small = microtime(true)+$t;
             while ($small >= microtime(true)) {
-                $criteria = new CDbCriteria();
+                $criteria->addCondition(array("id"=>$userId));
                 SPost::model()->find($criteria);
+                $userId++;
                 $s++;
             }
             
             $medium = microtime(true)+$t;
             while ($medium >= microtime(true)) {
+                $criteria->addCondition(array("id"=>$userId));
                 MPost::model()->find($criteria);
+                $userId++;
                 $m++;
             }
             
             $large = microtime(true)+$t;
             while ($large >= microtime(true)) {
+                $criteria->addCondition(array("id"=>$userId));
                 LPost::model()->find($criteria);
+                $userId++;
                 $l++;
             }
             
             echo "S: " . $s . "<br />";
             echo "M: " . $m . "<br />";
             echo "L: " . $l . "<br />";
+        }
+        
+        /*Select all users no parameters*/
+        public function actionUserSelectAll()
+        {
+            $criteria = new CDbCriteria();
+            $criteria->select = "*";
+            
+            $s=0;
+            $m=0;
+            $l=0;     
+            $t=10;
+            
+            $small = microtime(true)+$t;
+            while ($small >= microtime(true)) {
+                SPost::model()->findAll($criteria);
+                $s++;
+            }
+            
+            $medium = microtime(true)+$t;
+            while ($medium >= microtime(true)) {
+                MPost::model()->findAll($criteria);
+                $m++;
+            }
+            
+            $large = microtime(true)+$t;
+            while ($large >= microtime(true)) {
+                LPost::model()->findAll($criteria);
+                $l++;
+            }
+            
+            echo "S: " . $s . "<br />";
+            echo "M: " . $m . "<br />";
+            echo "L: " . $l . "<br />";
+        }
+        
+        /*Select all users with parameters*/
+        public function actionUserSelectAllParams()
+        {
+            $criteria = new CDbCriteria();
+            $criteria->select = "*";
+            
+            $s=0;
+            $m=0;
+            $l=0;
+            $t=10;
+            $userId = 5000;            
+            
+            $small = microtime(true)+$t;
+            while ($small >= microtime(true)) {
+                $criteria->addCondition(array("id"=>$userId));
+                SPost::model()->findAll($criteria);
+                $userId++;
+                $s++;
+            }
+            
+            $medium = microtime(true)+$t;
+            while ($medium >= microtime(true)) {
+                $criteria->addCondition(array("id"=>$userId));
+                MPost::model()->findAll($criteria);
+                $userId++;
+                $m++;
+            }
+            
+            $large = microtime(true)+$t;
+            while ($large >= microtime(true)) {
+                $criteria->addCondition(array("id"=>$userId));
+                LPost::model()->findAll($criteria);
+                $userId++;
+                $l++;
+            }
+            
+            echo "S: " . $s . "<br />";
+            echo "M: " . $m . "<br />";
+            echo "L: " . $l . "<br />";
+        }
+        
+        /*Update user*/
+        public function actionUserUpdate()
+        {
+            $s = 0;
+            $m = 0;
+            $l = 0;
+            $t=5;
+            
+            $criteria = new CDbCriteria();
+            $criteria->select = "*";
+            $criteria->limit = 5000;
+            $SPosts = SPost::model()->findAll($criteria);
+            $MPosts = MPost::model()->findAll($criteria);
+            $LPosts = LPost::model()->findAll($criteria);
+                        
+            $small = microtime(true)+$t;
+            while ($small >= microtime(true)) {
+                $SPosts[$s]->title = "Updated title";
+                $SPosts[$s]->content = "Updated content";
+                $SPosts[$s]->update();
+                $s++;
+            }
+            
+            $medium = microtime(true)+$t;
+            while ($medium >= microtime(true)) {
+                $MPosts[$m]->title = "Updated title";
+                $MPosts[$m]->content = "Updated content";
+                $MPosts[$m]->update();
+                $m++;
+            }
+            
+            $large = microtime(true)+$t;
+            while ($large >= microtime(true)) {
+                $LPosts[$l]->title = "Updated title";
+                $LPosts[$l]->content = "Updated content";
+                $LPosts[$l]->update();
+                $l++;
+            }
+            
+            echo "Small: " . $s . "<br />";
+            echo "Medium: " . $m . "<br />";
+            echo "Large: " . $l . "<br />";
+        }
+        
+        /*Delete user*/
+        public function actionUserDelete()
+        {
             
         }
 }

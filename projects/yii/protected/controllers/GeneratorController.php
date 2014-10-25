@@ -28,7 +28,7 @@ class GeneratorController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('user','post','comment'),
+				'actions'=>array('user','post','comment','postFast'),
 				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
@@ -37,7 +37,7 @@ class GeneratorController extends Controller
 		);
 	}
         
-        public function actionUser($type="L", $records=999900)
+        public function actionUser($type="L", $records=200000)
         {
             for ($i=0; $i<$records; $i++) {
                 $randomNumber = Generator::getRandomNumber(10);
@@ -58,7 +58,7 @@ class GeneratorController extends Controller
             echo "Finished";
         }
         
-        public function actionPost($type='L', $records=999900)
+        public function actionPost($type='L', $records=1000000)
         {
             for ($i=0; $i<$records; $i++) {
                 $criteria1 = null;
@@ -83,6 +83,47 @@ class GeneratorController extends Controller
                 $post->content = Generator::getRandomString(10) . ", " . Generator::getRandomString(8) . ", " . Generator::getRandomString(10) . ", " . Generator::getRandomString(7) . ".";
                 $post->created = date('Y-m-d H:i:s',time());
                 $post->user_id = $user->id;
+                $post->save();
+            }
+            
+            echo "Finished";
+        }
+        
+        /*Importing posts on faster way*/
+        public function actionPostFast($end=200000)
+        {
+            $total = LPost::model()->count();
+            $i = $total+1;//Start from here
+            
+            $title = Generator::getRandomString(5) . ", " . Generator::getRandomString(10) . ".";
+            $content = Generator::getRandomString(10) . ", " . Generator::getRandomString(8) . ", " . Generator::getRandomString(10) . ", " . Generator::getRandomString(7) . ".";
+            
+            for ($i; $i<=$end; $i++) {
+                $criteria1 = null;
+                $user = null;
+                $post = null;
+                
+                $post = new LPost();
+                $post->id = $i;
+                $post->title = $i . "- " . $title;
+                $post->content = $i . "- " . $content;
+                $post->created = date('Y-m-d H:i:s',time());
+                if ($i>200000 && $i<=400000) {
+                    $post->user_id = $i-200000;
+                } else if ($i>400000 && $i<=600000) {
+                    $post->user_id = $i-400000;
+                } else if ($i>600000 && $i<=800000) {
+                    $post->user_id = $i-600000;
+                } else if ($i>800000 && $i<=1000000) {
+                    $post->user_id = $i-800000;
+                } else {
+                    $post->user_id = $i;
+                }
+                
+                if ($i>1000000) {
+                    var_dump("Finished");
+                    exit();
+                }
                 $post->save();
             }
             
