@@ -2,6 +2,24 @@
 
 class SiteController extends Controller
 {
+    private $criteria;
+    private $s;
+    private $m;
+    private $l;
+    private $t;
+    private $userId;
+
+    public function init()
+    {
+        $this->criteria = new CDbCriteria();
+        $this->criteria->select = "*";
+        
+        $this->s = 0;
+        $this->m = 0;
+        $this->l = 0;
+        $this->t = 10;
+        $this->userId = 10000;
+    }
 	/**
 	 * Declares class-based actions.
 	 */
@@ -84,117 +102,91 @@ class SiteController extends Controller
         /*Select one user with condition*/
         public function actionUserSelect()
         {
-            $s=0;
-            $m=0;
-            $l=0;
-            $t=10;
-            $userId = 5000;
-            
-            $criteria = new CDbCriteria();
-            $criteria->select = "*";
-            
-            $small = microtime(true)+$t;
+            $small = microtime(true)+$this->t;
             while ($small >= microtime(true)) {
-                $criteria->addCondition(array("id"=>$userId));
-                SPost::model()->find($criteria);
-                $userId++;
-                $s++;
+                $this->criteria->addCondition(array("id"=>$this->userId));
+                SPost::model()->find($this->criteria);
+                $this->userId++;
+                $this->s++;
             }
             
-            $medium = microtime(true)+$t;
+            $medium = microtime(true)+$this->t;
             while ($medium >= microtime(true)) {
-                $criteria->addCondition(array("id"=>$userId));
-                MPost::model()->find($criteria);
-                $userId++;
-                $m++;
+                $this->criteria->addCondition(array("id"=>$this->userId));
+                MPost::model()->find($this->criteria);
+                $this->userId++;
+                $this->m++;
             }
             
-            $large = microtime(true)+$t;
+            $large = microtime(true)+$this->t;
             while ($large >= microtime(true)) {
-                $criteria->addCondition(array("id"=>$userId));
-                LPost::model()->find($criteria);
-                $userId++;
-                $l++;
+                $this->criteria->addCondition(array("id"=>$this->userId));
+                LPost::model()->find($this->criteria);
+                $this->userId++;
+                $this->l++;
             }
             
-            echo "S: " . $s . "<br />";
-            echo "M: " . $m . "<br />";
-            echo "L: " . $l . "<br />";
+            echo "S: " . $this->s . "<br />";
+            echo "M: " . $this->m . "<br />";
+            echo "L: " . $this->l . "<br />";
         }
         
         /*Select all users no parameters*/
         public function actionUserSelectAll()
         {
-            $criteria = new CDbCriteria();
-            $criteria->select = "*";
-            
-            $s=0;
-            $m=0;
-            $l=0;     
-            $t=10;
-            
-            $small = microtime(true)+$t;
+            $small = microtime(true)+$this->t;
             while ($small >= microtime(true)) {
-                SPost::model()->findAll($criteria);
-                $s++;
+                SPost::model()->findAll($this->criteria);
+                $this->s++;
             }
             
-            $medium = microtime(true)+$t;
+            $medium = microtime(true)+$this->t;
             while ($medium >= microtime(true)) {
-                MPost::model()->findAll($criteria);
-                $m++;
+                MPost::model()->findAll($this->criteria);
+                $this->m++;
             }
             
-            $large = microtime(true)+$t;
+            $large = microtime(true)+$this->t;
             while ($large >= microtime(true)) {
-                LPost::model()->findAll($criteria);
-                $l++;
+                LPost::model()->findAll($this->criteria);
+                $this->l++;
             }
             
-            echo "S: " . $s . "<br />";
-            echo "M: " . $m . "<br />";
-            echo "L: " . $l . "<br />";
+            echo "S: " . $this->s . "<br />";
+            echo "M: " . $this->m . "<br />";
+            echo "L: " . $this->l . "<br />";
         }
         
         /*Select all users with parameters*/
         public function actionUserSelectAllParams()
         {
-            $criteria = new CDbCriteria();
-            $criteria->select = "*";
-            
-            $s=0;
-            $m=0;
-            $l=0;
-            $t=10;
-            $userId = 5000;            
-            
-            $small = microtime(true)+$t;
+            $small = microtime(true)+$this->t;
             while ($small >= microtime(true)) {
-                $criteria->addCondition(array("id"=>$userId));
-                SPost::model()->findAll($criteria);
-                $userId++;
-                $s++;
+                $this->criteria->addCondition(array("id"=>$this->userId));
+                SPost::model()->findAll($this->criteria);
+                $this->userId++;
+                $this->s++;
             }
             
-            $medium = microtime(true)+$t;
+            $medium = microtime(true)+$this->t;
             while ($medium >= microtime(true)) {
-                $criteria->addCondition(array("id"=>$userId));
-                MPost::model()->findAll($criteria);
-                $userId++;
-                $m++;
+                $this->criteria->addCondition(array("id"=>$this->userId));
+                MPost::model()->findAll($this->criteria);
+                $this->userId++;
+                $this->m++;
             }
             
-            $large = microtime(true)+$t;
+            $large = microtime(true)+$this->t;
             while ($large >= microtime(true)) {
-                $criteria->addCondition(array("id"=>$userId));
-                LPost::model()->findAll($criteria);
-                $userId++;
-                $l++;
+                $this->criteria->addCondition(array("id"=>$this->userId));
+                LPost::model()->findAll($this->criteria);
+                $this->userId++;
+                $this->l++;
             }
             
-            echo "S: " . $s . "<br />";
-            echo "M: " . $m . "<br />";
-            echo "L: " . $l . "<br />";
+            echo "S: " . $this->s . "<br />";
+            echo "M: " . $this->m . "<br />";
+            echo "L: " . $this->l . "<br />";
         }
         
         /*Update user*/
