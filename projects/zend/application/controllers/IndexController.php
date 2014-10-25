@@ -15,7 +15,7 @@ class IndexController extends Zend_Controller_Action
         $this->s = 0;
         $this->m = 0;
         $this->l = 0;
-        $this->t = 2;
+        $this->t = 10;
         $this->userId = 10000;
     }
 
