@@ -1,1 +1,20 @@
-<?php echo $this->layout()->content; ?>
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>PHP Frameworks Speed Benchmark </title>
+  <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/main.css" />
+  <?php echo $this->headLink()->appendStylesheet($this->serverUrl().$this->baseUrl().'/css/main.css') ?>
+  <?php echo $this->headLink()->appendStylesheet($this->serverUrl().$this->baseUrl().'/css/layout.css') ?>  
+  <?php echo $this->headScript()->prependFile($this->serverUrl().'/js/jquery-1.11.1.min.js'); ?>
+</head>
+<body>
+    
+<div id="menu"><?php include_once $_SERVER['DOCUMENT_ROOT'].'/menu.php'; ?></div>
+
+<div class="body">
+    <?php echo $this->layout()->content ?>
+</div>
+
+</body>
+</html>
