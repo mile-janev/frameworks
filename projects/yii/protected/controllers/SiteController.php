@@ -99,8 +99,15 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
         
-        /*Select one user with condition*/
-        public function actionUserSelect()
+        public function actionStatistic()
+        {
+            $this->render('statistic',array(
+//                'model'=>$model
+            ));
+        }
+        
+        /*Select one posts with condition*/
+        public function actionSelect()
         {
             $small = microtime(true)+$this->t;
             while ($small >= microtime(true)) {
@@ -126,13 +133,16 @@ class SiteController extends Controller
                 $this->l++;
             }
             
-            echo "S: " . $this->s . "<br />";
-            echo "M: " . $this->m . "<br />";
-            echo "L: " . $this->l . "<br />";
+            $this->render('result',array(
+                'act' => 'Select',
+                'small' => $this->s,
+                'medium' => $this->m,
+                'large' => $this->l
+            ));
         }
         
-        /*Select all users no parameters*/
-        public function actionUserSelectAll()
+        /*Select all posts no parameters*/
+        public function actionSelectAll()
         {
             $small = microtime(true)+$this->t;
             while ($small >= microtime(true)) {
@@ -152,13 +162,16 @@ class SiteController extends Controller
                 $this->l++;
             }
             
-            echo "S: " . $this->s . "<br />";
-            echo "M: " . $this->m . "<br />";
-            echo "L: " . $this->l . "<br />";
+            $this->render('result',array(
+                'act' => 'Select All',
+                'small' => $this->s,
+                'medium' => $this->m,
+                'large' => $this->l
+            ));
         }
         
-        /*Select all users with parameters*/
-        public function actionUserSelectAllParams()
+        /*Select all posts with parameters*/
+        public function actionSelectAllParams()
         {
             $small = microtime(true)+$this->t;
             while ($small >= microtime(true)) {
@@ -184,13 +197,16 @@ class SiteController extends Controller
                 $this->l++;
             }
             
-            echo "S: " . $this->s . "<br />";
-            echo "M: " . $this->m . "<br />";
-            echo "L: " . $this->l . "<br />";
+            $this->render('result',array(
+                'act' => 'Select All Params',
+                'small' => $this->s,
+                'medium' => $this->m,
+                'large' => $this->l
+            ));
         }
         
-        /*Update user*/
-        public function actionUserUpdate()
+        /*Update post*/
+        public function actionUpdate()
         {
             $s = 0;
             $m = 0;
@@ -233,8 +249,8 @@ class SiteController extends Controller
             echo "Large: " . $l . "<br />";
         }
         
-        /*Delete user*/
-        public function actionUserDelete()
+        /*Delete post*/
+        public function actionDelete()
         {
             
         }

@@ -23,10 +23,15 @@ class IndexController extends Zend_Controller_Action
     {        
         // action body
     }
-
-    /*Select one user with condition*/
-    public function userselectAction()
+    
+    public function statisticAction()
     {        
+        // action body
+    }
+
+    /*Select one post with condition*/
+    public function selectAction()
+    {
         $select1 = new Zend_Db_Select($this->db);
         $select1 = $this->db->select()->from('s_post');
         $small = microtime(true)+$this->t;
@@ -57,15 +62,15 @@ class IndexController extends Zend_Controller_Action
             $this->l++;
         }
         
-        echo "S: " . $this->s . "<br />";
-        echo "M: " . $this->m . "<br />";
-        echo "L: " . $this->l . "<br />";
-        
-        exit();
+        $this->view->assign('act', 'Select');
+        $this->view->assign('small', $this->s);
+        $this->view->assign('medium', $this->m);
+        $this->view->assign('large', $this->l);
+        $this->render('result');
     }
     
-    /*Select all users no parameters*/
-    public function userselectallAction()
+    /*Select all posts no parameters*/
+    public function selectallAction()
     {        
         $select1 = new Zend_Db_Select($this->db);
         $select1 = $this->db->select()->from('s_post');
@@ -91,15 +96,15 @@ class IndexController extends Zend_Controller_Action
             $this->l++;
         }
         
-        echo "S: " . $this->s . "<br />";
-        echo "M: " . $this->m . "<br />";
-        echo "L: " . $this->l . "<br />";
-        
-        exit();
+        $this->view->assign('act', 'Select');
+        $this->view->assign('small', $this->s);
+        $this->view->assign('medium', $this->m);
+        $this->view->assign('large', $this->l);
+        $this->render('result');
     }
     
-    /*Select all users no parameters*/
-    public function userselectallparamsAction()
+    /*Select all posts no parameters*/
+    public function selectallparamsAction()
     {
         $select1 = new Zend_Db_Select($this->db);
         $select1 = $this->db->select()->from('s_post');
@@ -131,11 +136,11 @@ class IndexController extends Zend_Controller_Action
             $this->l++;
         }
         
-        echo "S: " . $this->s . "<br />";
-        echo "M: " . $this->m . "<br />";
-        echo "L: " . $this->l . "<br />";
-        
-        exit();
+        $this->view->assign('act', 'Select');
+        $this->view->assign('small', $this->s);
+        $this->view->assign('medium', $this->m);
+        $this->view->assign('large', $this->l);
+        $this->render('result');
     }
 
 }
