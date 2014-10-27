@@ -15,7 +15,7 @@
         <div id="menu"><?php include_once $_SERVER['DOCUMENT_ROOT'].'/menu.php'; ?></div>
         <div class="body">
             <div class="container" id="page">
-                    Laravel Comming Soon!
+                Laravel Comming Soon!
             </div>
         </div>
     </body>
