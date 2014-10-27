@@ -12,6 +12,8 @@ class Site extends CI_Controller
     {
         parent::__construct();
         
+        $this->load->database();
+        
         $this->s = 0;
         $this->m = 0;
         $this->l = 0;
@@ -35,8 +37,27 @@ class Site extends CI_Controller
     
     /*Select one posts with condition*/
     public function select()
-    {
-        
+    {        
+        $small = microtime(true)+$this->t;
+        while ($small >= microtime(true)) {
+            $this->db->query("SELECT * FROM s_post")->row();
+            $this->userId++;
+            $this->s++;
+        }
+
+        $medium = microtime(true)+$this->t;
+        while ($medium >= microtime(true)) {
+            $this->db->query("SELECT * FROM m_post")->row();
+            $this->userId++;
+            $this->m++;
+        }
+
+        $large = microtime(true)+$this->t;
+        while ($large >= microtime(true)) {
+            $this->db->query("SELECT * FROM l_post")->row();
+            $this->userId++;
+            $this->l++;
+        }
         
         $this->load->view('site/result', array(
             'act' => 'Select',
@@ -49,8 +70,24 @@ class Site extends CI_Controller
     /*Select all posts no parameters*/
     public function selectall()
     {
-        
-        
+        $small = microtime(true)+$this->t;
+        while ($small >= microtime(true)) {
+            $this->db->get('s_post')->result();
+            $this->s++;
+        }
+
+        $medium = microtime(true)+$this->t;
+        while ($medium >= microtime(true)) {
+            $this->db->get('m_post')->result();
+            $this->m++;
+        }
+
+        $large = microtime(true)+$this->t;
+        while ($large >= microtime(true)) {
+            $this->db->get('l_post')->result();
+            $this->l++;
+        }
+                
         $this->load->view('site/result', array(
             'act' => 'Select All',
             'small' => $this->s,
@@ -62,7 +99,26 @@ class Site extends CI_Controller
     /*Select all posts with parameters*/
     public function selectallparams()
     {
-        
+        $small = microtime(true)+$this->t;
+        while ($small >= microtime(true)) {
+            $this->db->get_where('s_post', array('id'=>$this->userId))->result();
+            $this->userId++;
+            $this->s++;
+        }
+
+        $medium = microtime(true)+$this->t;
+        while ($medium >= microtime(true)) {
+            $this->db->get_where('m_post', array('id'=>$this->userId))->result();
+            $this->userId++;
+            $this->m++;
+        }
+
+        $large = microtime(true)+$this->t;
+        while ($large >= microtime(true)) {
+            $this->db->get_where('l_post', array('id'=>$this->userId))->result();
+            $this->userId++;
+            $this->l++;
+        }
         
         $this->load->view('site/result', array(
             'act' => 'Select All Params',
