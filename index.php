@@ -11,6 +11,10 @@
     </head>
     <body>
         <div id="menu"><?php include_once 'menu.php'; ?></div>
-        <div class="body">Project is started</div>
+        <div class="body">
+            <div class="container" id="page">
+                Project is started
+            </div>
+        </div>
     </body>
 </html>
