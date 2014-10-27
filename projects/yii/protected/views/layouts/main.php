@@ -9,7 +9,7 @@
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/main.js"></script>
         
-        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+        <title>Yii | PHP Frameworks Speed Benchmark</title>
     </head>
 
     <body>
