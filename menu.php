@@ -52,22 +52,22 @@
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
         <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php">Codeigniter</a>
         <ul class="subMenu">
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Statistic</a>
                 </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/select/">Select</a>
                 </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectall/">Select All</a>
                 </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectallparams\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectallparams\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectallparams/">Select All Params</a>
                 </li>
-<!--                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/update\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+<!--                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/update\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/update/">Update</a>
                 </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/delete\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/delete\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/delete/">Delete</a>
                 </li>-->
             </ul>
