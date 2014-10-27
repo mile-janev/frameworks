@@ -26,6 +26,8 @@ class Site extends CI_Controller
     
     public function statistic()
     {
+        
+        
         $this->load->view('site/statistic', array(
             
         ));
@@ -34,6 +36,8 @@ class Site extends CI_Controller
     /*Select one posts with condition*/
     public function select()
     {
+        
+        
         $this->load->view('site/result', array(
             'act' => 'Select',
             'small' => $this->s,
@@ -45,6 +49,8 @@ class Site extends CI_Controller
     /*Select all posts no parameters*/
     public function selectall()
     {
+        
+        
         $this->load->view('site/result', array(
             'act' => 'Select All',
             'small' => $this->s,
@@ -56,11 +62,31 @@ class Site extends CI_Controller
     /*Select all posts with parameters*/
     public function selectallparams()
     {
+        
+        
         $this->load->view('site/result', array(
             'act' => 'Select All Params',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
+        ));
+    }
+    
+    public function update()
+    {
+        
+        
+        $this->load->view('site/index', array(
+            
+        ));
+    }
+    
+    public function delete()
+    {
+        
+        
+        $this->load->view('site/index', array(
+            
         ));
     }
     
