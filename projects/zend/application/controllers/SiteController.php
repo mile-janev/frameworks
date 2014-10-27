@@ -96,7 +96,7 @@ class SiteController extends Zend_Controller_Action
             $this->l++;
         }
         
-        $this->view->assign('act', 'Select');
+        $this->view->assign('act', 'Select All');
         $this->view->assign('small', $this->s);
         $this->view->assign('medium', $this->m);
         $this->view->assign('large', $this->l);
@@ -136,7 +136,7 @@ class SiteController extends Zend_Controller_Action
             $this->l++;
         }
         
-        $this->view->assign('act', 'Select');
+        $this->view->assign('act', 'Select All Params');
         $this->view->assign('small', $this->s);
         $this->view->assign('medium', $this->m);
         $this->view->assign('large', $this->l);
