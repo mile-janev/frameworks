@@ -99,6 +99,32 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
         
+        /*Saving test info into database*/
+        public function saveTest($function="")
+        {
+            if ($function != "") {
+                $statistic = new Statistic();
+                $statistic->function = $function;
+                $statistic->created = date("Y-m-d H:i:s", time());
+                $statistic->execution_time = $this->t;
+                $statistic->small = $this->s;
+                $statistic->medium = $this->m;
+                $statistic->large = $this->l;
+                
+                $statistic->save();
+                
+                $this->s = 0;
+                $this->m = 0;
+                $this->l = 0;
+                
+                return true;
+            } else {
+                return false;
+            }
+            
+            
+        }
+        
         public function actionStatistic()
         {
             $this->render('statistic',array(
@@ -133,6 +159,8 @@ class SiteController extends Controller
                 $this->l++;
             }
             
+            $this->saveTest("select");
+            
             $this->render('result',array(
                 'act' => 'Select',
                 'small' => $this->s,
@@ -161,6 +189,8 @@ class SiteController extends Controller
                 LPost::model()->findAll($this->criteria);
                 $this->l++;
             }
+            
+            $this->saveTest("selectall");
             
             $this->render('result',array(
                 'act' => 'Select All',
@@ -196,6 +226,8 @@ class SiteController extends Controller
                 $this->userId++;
                 $this->l++;
             }
+            
+            $this->saveTest("selectallparams");
             
             $this->render('result',array(
                 'act' => 'Select All Params',
