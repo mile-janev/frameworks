@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 28, 2014 at 09:34 PM
+-- Generation Time: Oct 28, 2014 at 10:23 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.3.10-1ubuntu3.14
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `statistic` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `framework` varchar(255) NOT NULL,
   `function` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `execution_time` int(10) unsigned NOT NULL,
