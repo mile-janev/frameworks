@@ -18,6 +18,35 @@ class SiteController extends Zend_Controller_Action
         $this->t = 10;
         $this->userId = 10000;
     }
+    
+    /*Saving test info into database*/
+    public function saveTest($function="")
+    {
+        if ($function != "") {
+            
+            $statistic = new Application_Model_DbTable_Statistic();
+            
+            $data = array(
+                "framework" => "zend",
+                "function" => $function,
+                "created" => date("Y-m-d H:i:s", time()),
+                "execution_time" => $this->t,
+                "small" => $this->s,
+                "medium" => $this->m,
+                "large" => $this->l
+            );
+
+            $statistic->insert($data);
+
+            $this->s = 0;
+            $this->m = 0;
+            $this->l = 0;
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function indexAction()
     {        
@@ -62,6 +91,8 @@ class SiteController extends Zend_Controller_Action
             $this->l++;
         }
         
+        $this->saveTest("select");
+        
         $this->view->assign('act', 'Select');
         $this->view->assign('small', $this->s);
         $this->view->assign('medium', $this->m);
@@ -95,6 +126,8 @@ class SiteController extends Zend_Controller_Action
             $select3->query()->fetchAll();
             $this->l++;
         }
+        
+        $this->saveTest("selectall");
         
         $this->view->assign('act', 'Select All');
         $this->view->assign('small', $this->s);
@@ -135,6 +168,8 @@ class SiteController extends Zend_Controller_Action
             $this->userId++;
             $this->l++;
         }
+        
+        $this->saveTest("selectallparams");
         
         $this->view->assign('act', 'Select All Params');
         $this->view->assign('small', $this->s);
