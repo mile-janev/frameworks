@@ -84,7 +84,7 @@ class SiteController extends Zend_Controller_Action
         $select2 = $this->db->select()->from('m_post');
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $select2->query()->fetch();
+            $select2->query()->fetchAll();
             $this->m++;
         }
         
@@ -92,7 +92,7 @@ class SiteController extends Zend_Controller_Action
         $select3 = $this->db->select()->from('l_post');
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $select3->query()->fetch();
+            $select3->query()->fetchAll();
             $this->l++;
         }
         
