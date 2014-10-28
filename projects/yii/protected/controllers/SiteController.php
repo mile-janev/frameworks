@@ -104,6 +104,7 @@ class SiteController extends Controller
         {
             if ($function != "") {
                 $statistic = new Statistic();
+                $statistic->framework = 'yii';
                 $statistic->function = $function;
                 $statistic->created = date("Y-m-d H:i:s", time());
                 $statistic->execution_time = $this->t;

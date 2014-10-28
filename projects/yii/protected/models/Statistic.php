@@ -30,12 +30,12 @@ class Statistic extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('function, created, execution_time, small, medium, large', 'required'),
-			array('function', 'length', 'max'=>255),
+			array('framework, function, created, execution_time, small, medium, large', 'required'),
+			array('framework, function', 'length', 'max'=>255),
 			array('execution_time, small, medium, large', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, function, created, execution_time, small, medium, large', 'safe', 'on'=>'search'),
+			array('id, framework, function, created, execution_time, small, medium, large', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,6 +57,7 @@ class Statistic extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+                        'framework' => 'Framework',
 			'function' => 'Function',
 			'created' => 'Created',
 			'execution_time' => 'Execution Time',
@@ -85,6 +86,7 @@ class Statistic extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
+                $criteria->compare('framework',$this->framework,true);
 		$criteria->compare('function',$this->function,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('execution_time',$this->execution_time,true);
