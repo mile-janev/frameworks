@@ -121,8 +121,6 @@ class SiteController extends Controller
             } else {
                 return false;
             }
-            
-            
         }
         
         public function actionStatistic()
