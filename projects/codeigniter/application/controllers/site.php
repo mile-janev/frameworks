@@ -21,6 +21,33 @@ class Site extends CI_Controller
         $this->userId = 10000;
     }
     
+    /*Saving test info into database*/
+    public function saveTest($function="")
+    {
+        if ($function != "") {
+            
+            $data = array(
+                "framework" => "codeigniter",
+                "function" => $function,
+                "created" => date("Y-m-d H:i:s", time()),
+                "execution_time" => $this->t,
+                "small" => $this->s,
+                "medium" => $this->m,
+                "large" => $this->l
+            );
+
+            $this->db->insert('statistic', $data);
+
+            $this->s = 0;
+            $this->m = 0;
+            $this->l = 0;
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     public function index()
     {
         $this->load->view('site/index');
@@ -59,6 +86,8 @@ class Site extends CI_Controller
             $this->l++;
         }
         
+        $this->saveTest("select");
+        
         $this->load->view('site/result', array(
             'act' => 'Select',
             'small' => $this->s,
@@ -87,6 +116,8 @@ class Site extends CI_Controller
             $this->db->get('l_post')->result();
             $this->l++;
         }
+        
+        $this->saveTest("selectall");
                 
         $this->load->view('site/result', array(
             'act' => 'Select All',
@@ -119,6 +150,8 @@ class Site extends CI_Controller
             $this->userId++;
             $this->l++;
         }
+        
+        $this->saveTest("selectallparams");
         
         $this->load->view('site/result', array(
             'act' => 'Select All Params',
