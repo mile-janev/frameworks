@@ -48,7 +48,6 @@ class LUser extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'lComments' => array(self::HAS_MANY, 'LComment', 'user_id'),
 			'lPosts' => array(self::HAS_MANY, 'LPost', 'user_id'),
 		);
 	}

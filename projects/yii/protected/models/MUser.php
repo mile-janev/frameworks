@@ -48,7 +48,6 @@ class MUser extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'mComments' => array(self::HAS_MANY, 'MComment', 'user_id'),
 			'mPosts' => array(self::HAS_MANY, 'MPost', 'user_id'),
 		);
 	}

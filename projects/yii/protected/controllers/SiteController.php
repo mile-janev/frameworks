@@ -161,8 +161,7 @@ class SiteController extends Controller
     /*Test method find()*/
     public function actionFind()
     {
-//        var_dump("tuka");
-//        exit();
+        
     }
     
     /*Test method findByPk()*/
@@ -179,6 +178,30 @@ class SiteController extends Controller
     
     /*Test method findBySql()*/
     public function actionFindbysql()
+    {
+        
+    }
+    
+    /*Test method findAll()*/
+    public function actionFindall()
+    {
+        
+    }
+    
+    /*Test method findAllByPk()*/
+    public function actionFindallbypk()
+    {
+        
+    }
+    
+    /*Test method findAllByAttributes()*/
+    public function actionFindallbyattributes()
+    {
+        
+    }
+    
+    /*Test method findAllBySql()*/
+    public function actionFindallbysql()
     {
         
     }

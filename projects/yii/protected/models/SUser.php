@@ -48,7 +48,6 @@ class SUser extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'sComments' => array(self::HAS_MANY, 'SComment', 'user_id'),
 			'sPosts' => array(self::HAS_MANY, 'SPost', 'user_id'),
 		);
 	}

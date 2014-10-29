@@ -49,7 +49,6 @@ class SPost extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'sComments' => array(self::HAS_MANY, 'SComment', 'post_id'),
 			'user' => array(self::BELONGS_TO, 'SUser', 'user_id'),
 		);
 	}

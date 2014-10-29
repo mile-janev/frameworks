@@ -49,7 +49,6 @@ class LPost extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'lComments' => array(self::HAS_MANY, 'LComment', 'post_id'),
 			'user' => array(self::BELONGS_TO, 'LUser', 'user_id'),
 		);
 	}
