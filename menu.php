@@ -4,10 +4,10 @@
 <div id="titleSite"><a href="<?php echo $serverName; ?>">PHP Frameworks Speed Benchmark</a></div>
 <ul id="mainMenu">
     <li<?php echo (preg_match('/yii/',$currentUrl)) ? ' class="active"' : ''; ?>>
-        <a href="<?php echo $serverName; ?>/projects/yii/">Yii</a>
+        <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/index/">Yii</a>
         <ul class="subMenu">
-            <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/statistic/',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/statistic/">Statistic</a>
+            <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/index/',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/index/">Statistic</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/select/">Select</a>
