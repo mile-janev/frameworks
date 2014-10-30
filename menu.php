@@ -52,7 +52,7 @@
                 </li>
                 <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectallparams\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/zend/public/site/selectallparams/">Select All Params</a>
-                </li>        -->
+                </li>
             </ul>
     </li>
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
