@@ -13,47 +13,53 @@
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/selectall/">Select All</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/find/">find($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/find/">find()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbypk\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbypk/">findByPk($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbypk/">findByPk()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbyattributes\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbyattributes/">findByAttributes($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbyattributes/">findByAttributes()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbysql\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbysql/">findBySql($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbysql/">findBySql()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findall/">findAll($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findall/">findAll()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findallbypk\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findallbypk/">findAllByPk($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findallbypk/">findAllByPk()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findballyattributes\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findallbyattributes/">findAllByAttributes($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findallbyattributes/">findAllByAttributes()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findallbysql\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findallbysql/">findAllBySql($id)</a>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findallbysql/">findAllBySql()</a>
             </li>
         </ul>
     </li>
     <li<?php echo (preg_match('/zend/',$currentUrl)) ? ' class="active"' : ''; ?>>
-        <a href="<?php echo $serverName; ?>/projects/zend/public/">Zend</a>
-            <ul class="subMenu">
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/zend/public/site/statistic/">Statistic</a>
-                </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/zend/public/site/select/">Select</a>
-                </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/zend/public/site/selectall/">Select All</a>
-                </li>
-                <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectallparams\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/zend/public/site/selectallparams/">Select All Params</a>
-                </li>
-            </ul>
+        <a href="<?php echo $serverName; ?>/projects/zend/public/site/index/">Zend</a>
+        <ul class="subMenu">
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/index\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/index/">Statistic</a>
+            </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/selectall/">Select All</a>
+            </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchrow\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchrow/">fetchRow()</a>
+            </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/find/">find()</a>
+            </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchall/">fetchAll()</a>
+            </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetch\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetch/">fetch()</a>
+            </li>
+        </ul>
     </li>
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
         <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php">Codeigniter</a>
