@@ -218,6 +218,7 @@ class SiteController extends Zend_Controller_Action
             $this->i++;
             $this->s++;
         }
+        $this->i = 1;
         
         $select2 = new Zend_Db_Select($this->db);
         $select2 = $this->db->select()->from('m_post');
@@ -228,6 +229,7 @@ class SiteController extends Zend_Controller_Action
             $this->i++;
             $this->m++;
         }
+        $this->i = 1;
         
         $select3 = new Zend_Db_Select($this->db);
         $select3 = $this->db->select()->from('l_post');
@@ -238,6 +240,7 @@ class SiteController extends Zend_Controller_Action
             $this->i++;
             $this->l++;
         }
+        $this->i = 1;
         
         $this->saveTest("fetch()");
         
