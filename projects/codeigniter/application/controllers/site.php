@@ -61,41 +61,41 @@ class Site extends CI_Controller
         ));
     }
     
-    /*Select one posts with condition*/
+    /*Test custom query() -> row(). Select one post with condition*/
     public function select()
-    {        
+    {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->db->query("SELECT * FROM s_post")->row();
-            $this->userId++;
+            $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i)->row();
+            $this->i++;
             $this->s++;
         }
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $this->db->query("SELECT * FROM m_post")->row();
-            $this->userId++;
+            $this->db->query("SELECT * FROM m_post WHERE id = ".$this->i)->row();
+            $this->i++;
             $this->m++;
         }
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $this->db->query("SELECT * FROM l_post")->row();
-            $this->userId++;
+            $this->db->query("SELECT * FROM l_post WHERE id = ".$this->i)->row();
+            $this->i++;
             $this->l++;
         }
         
         $this->saveTest("select");
         
         $this->load->view('site/result', array(
-            'act' => 'Select',
+            'act' => 'Select one result',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
         ));
     }
     
-    /*Select all posts no parameters*/
+    /*Test method get(). Select all results.*/
     public function selectall()
     {
         $small = microtime(true)+$this->t;
@@ -116,65 +116,47 @@ class Site extends CI_Controller
             $this->l++;
         }
         
-        $this->saveTest("selectall");
+        $this->saveTest("get()");
                 
         $this->load->view('site/result', array(
-            'act' => 'Select All',
+            'act' => 'get()',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
         ));
     }
     
-    /*Select all posts with parameters*/
-    public function selectallparams()
+    /*Test method fet_where()*/
+    public function getwhere()
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->db->get_where('s_post', array('id'=>$this->userId))->result();
-            $this->userId++;
+            $this->db->get_where('s_post', array('id'=>$this->i))->result();
+            $this->i++;
             $this->s++;
         }
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $this->db->get_where('m_post', array('id'=>$this->userId))->result();
-            $this->userId++;
+            $this->db->get_where('m_post', array('id'=>$this->i))->result();
+            $this->i++;
             $this->m++;
         }
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $this->db->get_where('l_post', array('id'=>$this->userId))->result();
-            $this->userId++;
+            $this->db->get_where('l_post', array('id'=>$this->i))->result();
+            $this->i++;
             $this->l++;
         }
         
-        $this->saveTest("selectallparams");
+        $this->saveTest("get_where()");
         
         $this->load->view('site/result', array(
-            'act' => 'Select All Params',
+            'act' => 'get_where()',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
-        ));
-    }
-    
-    public function update()
-    {
-        
-        
-        $this->load->view('site/index', array(
-            
-        ));
-    }
-    
-    public function delete()
-    {
-        
-        
-        $this->load->view('site/index', array(
-            
         ));
     }
     
