@@ -62,7 +62,7 @@
         </ul>
     </li>
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
-        <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php">Codeigniter</a>
+        <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Codeigniter</a>
         <ul class="subMenu">
                 <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                     <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Statistic</a>
