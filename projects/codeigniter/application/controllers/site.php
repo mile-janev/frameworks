@@ -54,13 +54,6 @@ class Site extends CI_Controller
         $this->load->view('site/index');
     }
     
-    public function statistic()
-    {
-        $this->load->view('site/statistic', array(
-            
-        ));
-    }
-    
     /*Test custom query() -> row(). Select one post with condition*/
     public function select()
     {
