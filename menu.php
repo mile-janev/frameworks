@@ -62,10 +62,10 @@
         </ul>
     </li>
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
-        <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Codeigniter</a>
+        <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/index/">Codeigniter</a>
         <ul class="subMenu">
-            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Statistic</a>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/index\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/index/">Statistic</a>
             </li>
             <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectall/">Select All</a>
