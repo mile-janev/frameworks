@@ -6,7 +6,7 @@ class Site extends CI_Controller
     private $m;
     private $l;
     private $t;
-    private $userId;
+    private $i;
     
     public function __construct()
     {
@@ -14,11 +14,16 @@ class Site extends CI_Controller
         
         $this->load->database();
         
+        $this->reset();
+    }
+    
+    public function reset()
+    {
         $this->s = 0;
         $this->m = 0;
         $this->l = 0;
         $this->t = 10;
-        $this->userId = 10000;
+        $this->i = 1;
     }
     
     /*Saving test info into database*/
@@ -38,10 +43,6 @@ class Site extends CI_Controller
 
             $this->db->insert('statistic', $data);
 
-            $this->s = 0;
-            $this->m = 0;
-            $this->l = 0;
-
             return true;
         } else {
             return false;
@@ -55,8 +56,6 @@ class Site extends CI_Controller
     
     public function statistic()
     {
-        
-        
         $this->load->view('site/statistic', array(
             
         ));
