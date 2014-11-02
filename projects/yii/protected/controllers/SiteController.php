@@ -61,13 +61,6 @@ class SiteController extends Controller
             return false;
         }
     }
-
-    public function actionIndex()
-    {
-        $this->render('index',array(
-//                'model'=>$model
-        ));
-    }
     
     /*Test method find()*/
     public function actionFind()
@@ -400,6 +393,70 @@ class SiteController extends Controller
             'medium' => $this->m,
             'large' => $this->l
         ));
+    }
+    
+    /*Load data and display*/
+    public function actionIndex()
+    {
+        /*find() start*/
+        $criteria1 = new CDbCriteria();
+        $criteria1->addCondition("framework = 'yii'");
+        $criteria1->addCondition("function = 'find()'");
+        $findResults = Statistic::model()->findAll($criteria1);
+        $findData = $this->formatArray($findResults);
+        /*find() end*/
+        
+        /*fetchRow() start*/
+        $criteria1 = new CDbCriteria();
+        $criteria1->addCondition("framework = 'yii'");
+        $criteria1->addCondition("function = 'findByPk()'");
+        $pkResults = Statistic::model()->findAll($criteria1);
+        $pkData = $this->formatArray($pkResults);
+        /*findByPk() end*/
+        
+        $this->render('index',array(
+            'findData'=>$findData,
+            'pkData'=>$pkData
+        ));
+    }
+    
+    /*Prepare results for displaying in chart*/
+    public function formatArray($statistic)
+    {
+        $results = $this->cleanResults($statistic);
+        $formatedArray = array();
+        $small = 0;
+        $medium = 0;
+        $large = 0;
+        $time = 0;
+        
+        foreach ($results as $result) {
+            $small += $result->small;
+            $medium += $result->medium;
+            $large += $result->large;
+            $time += $result->execution_time;
+        }
+        
+        $interval = 60/$time;//Ova e interval, posle go mnozeme so small/medium/large za 
+                            //da dobieme kolku e prosekot na izvrseni upiti vo minuta
+        
+        $formatedArray['tests'] = count($results);
+        $formatedArray['small'] = $small*$interval;
+        $formatedArray['medium'] = $medium*$interval;
+        $formatedArray['large'] = $large*$interval;
+        
+        return $formatedArray;
+    }
+    
+    //This function remove 5% of highest and 5% of lowest results for each database type (small/medium/large)
+    //Means that 70% of the tests will be accepted.
+    //
+    //Ova se pravi bidejki tie 30% se ne tolku realni poradi faktot sto procesorot vo
+    //toj moment mozel da bide zafaten pa pokazal pomal broj na zapisi ili drug nekoj faktor.
+    public function cleanResults($results)
+    {
+        
+        return $results;
     }
     
 }
