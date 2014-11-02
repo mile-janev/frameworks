@@ -95,37 +95,6 @@ class Site extends CI_Controller
         ));
     }
     
-    /*Test method get(). Select all results.*/
-    public function selectall()
-    {
-        $small = microtime(true)+$this->t;
-        while ($small >= microtime(true)) {
-            $this->db->get('s_post')->result();
-            $this->s++;
-        }
-
-        $medium = microtime(true)+$this->t;
-        while ($medium >= microtime(true)) {
-            $this->db->get('m_post')->result();
-            $this->m++;
-        }
-
-        $large = microtime(true)+$this->t;
-        while ($large >= microtime(true)) {
-            $this->db->get('l_post')->result();
-            $this->l++;
-        }
-        
-        $this->saveTest("get()");
-                
-        $this->load->view('site/result', array(
-            'act' => 'get()',
-            'small' => $this->s,
-            'medium' => $this->m,
-            'large' => $this->l
-        ));
-    }
-    
     /*Test method fet_where()*/
     public function getwhere()
     {
@@ -154,6 +123,37 @@ class Site extends CI_Controller
         
         $this->load->view('site/result', array(
             'act' => 'get_where()',
+            'small' => $this->s,
+            'medium' => $this->m,
+            'large' => $this->l
+        ));
+    }
+    
+    /*Test method get(). Select all results.*/
+    public function selectall()
+    {
+        $small = microtime(true)+$this->t;
+        while ($small >= microtime(true)) {
+            $this->db->get('s_post')->result();
+            $this->s++;
+        }
+
+        $medium = microtime(true)+$this->t;
+        while ($medium >= microtime(true)) {
+            $this->db->get('m_post')->result();
+            $this->m++;
+        }
+
+        $large = microtime(true)+$this->t;
+        while ($large >= microtime(true)) {
+            $this->db->get('l_post')->result();
+            $this->l++;
+        }
+        
+        $this->saveTest("get()");
+                
+        $this->load->view('site/result', array(
+            'act' => 'get()',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
