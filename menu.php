@@ -64,19 +64,19 @@
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
         <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Codeigniter</a>
         <ul class="subMenu">
-                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Statistic</a>
-                </li>
-                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/select/">Select one</a>
-                </li>
-                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectall/">Select All</a>
-                </li>
-                <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getwhere\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                    <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getwhere/">get_where()</a>
-                </li>
-            </ul>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/statistic\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/statistic/">Statistic</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectall/">Select All</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/select/">Select one</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getwhere\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getwhere/">get_where()</a>
+            </li>
+        </ul>
     </li>
 <!--    <li<?php echo (preg_match('/laravel/',$currentUrl)) ? ' class="active"' : ''; ?>>
         <a href="<?php echo $serverName; ?>/projects/laravel/">Laravel</a>
