@@ -88,7 +88,7 @@ class Site extends CI_Controller
         $this->saveTest("select");
         
         $this->load->view('site/result', array(
-            'act' => 'Select one result',
+            'act' => 'Select one',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
