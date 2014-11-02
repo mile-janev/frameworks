@@ -90,7 +90,7 @@ class GeneratorController extends Controller
         }
         
         /*Importing posts on faster way*/
-        public function actionPostFast($end=200000)
+        public function actionPostFast($end=1000000)
         {
             $total = LPost::model()->count();
             $i = $total+1;//Start from here
