@@ -53,17 +53,9 @@ class Library {
     
     public function findStatistic($framework, $function)
     {
-        if ($_SERVER['SERVER_NAME']=='tday.dev') {
-            $mysql_password = "toor";
-        } else {
-            $mysql_password = "toor";
-        }
-        $mysql_hostname = "localhost";
-        $mysql_user = "root";
-
         $mysql_database = "frameworks";
-        $bd = mysql_connect($mysql_hostname, $mysql_user, $mysql_password) or die("Could not connect database");
-        mysql_select_db($mysql_database, $bd) or die("Could not select database");
+        $db = @mysql_connect("localhost", "root", "toor") or die("Could not connect database");
+        mysql_select_db($mysql_database, $db) or die("Could not select database");
         
         $query = "SELECT * FROM statistic WHERE framework = '$framework' AND function = '$function'";
         $result = mysql_query($query);
