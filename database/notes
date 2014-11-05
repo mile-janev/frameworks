@@ -3,3 +3,5 @@
 3. Site frameworci komparacija megju find(Yii), fetchRow(zend), Select one (codeigniter)
 *4. Yii, komparacija megju find() i findByPk() so cel da se dokaze deka e podobro da se koristi findByPk() namesto find() koga imame primaren kluc
 *5. Zend, komparacija megju find() i fetchRow() so cel da se dokaze deka e podobro da se koristi find() namesto fetchRow() koga imame primaren kluc
+
+Vo Codeigniter akcijata selectall zapisuva get() fo baza vo functions. Sega e smeneno ama smeni vo bazata lokalno
