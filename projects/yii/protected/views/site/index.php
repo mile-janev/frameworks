@@ -1,7 +1,8 @@
 <div id="find-findByPk" class="block-wrapper">
     <h1>find() & findByPk()</h1>
     <div class="block-description">
-        Some description
+        Компарација помеѓу find() и findByPk() со цел да се докаже дека е подобро да се користи
+        findByPk() наместо find() кога како параметар за пребарување имаме примарен клуч.
     </div>
     <div class="block-chart">
         <div id="chart-find-findByPk"></div>
