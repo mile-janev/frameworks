@@ -16,13 +16,13 @@
 
         var data = google.visualization.arrayToDataTable([
             ['Database Type', 'find()', 'fetchRow()'],
-            ['Small', <?php echo $this->findData['small']; ?>, <?php echo $this->fetchRowData['small']; ?>],
-            ['Medium', <?php echo $this->findData['medium']; ?>, <?php echo $this->fetchRowData['medium']; ?>],
-            ['Large', <?php echo $this->findData['large']; ?>, <?php echo $this->fetchRowData['large']; ?>]
+            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>],
+            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>],
+            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>]
         ]);
 
         var options = {
-            title: 'find() & fetchRow()',
+            title: 'find() & fetchRow() in Zend',
             hAxis: {title: 'Database size', titleTextStyle: {color: 'red'}}
         };
 

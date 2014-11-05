@@ -402,14 +402,14 @@ class SiteController extends Controller
         $object = new Library();
         
         /*find()*/
-        $findData = $object->findStatistic('yii', 'find()');
+        $find_Yii = $object->findStatistic('yii', 'find()');
         
         /*findByPk()*/
-        $pkData = $object->findStatistic('yii', 'findByPk()');
+        $findByPk_Yii = $object->findStatistic('yii', 'findByPk()');
         
         $this->render('index',array(
-            'findData'=>$findData,
-            'pkData'=>$pkData
+            'find_Yii'=>$find_Yii,
+            'findByPk_Yii'=>$findByPk_Yii
         ));
     }    
 }

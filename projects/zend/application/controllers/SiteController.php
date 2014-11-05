@@ -252,13 +252,13 @@ class SiteController extends Zend_Controller_Action
         $object = new Library();
         
         /*find()*/
-        $findData = $object->findStatistic('zend', 'find()');
+        $find_zend = $object->findStatistic('zend', 'find()');
         
         /*fetchRow()*/
-        $fetchRowData = $object->findStatistic('zend', 'fetchRow()');
+        $fetchRow_zend = $object->findStatistic('zend', 'fetchRow()');
         
-        $this->view->assign('findData', $findData);
-        $this->view->assign('fetchRowData', $fetchRowData);        
+        $this->view->assign('find_zend', $find_zend);
+        $this->view->assign('fetchRow_zend', $fetchRow_zend);        
     }
 }
 

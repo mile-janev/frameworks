@@ -16,13 +16,13 @@
 
         var data = google.visualization.arrayToDataTable([
             ['Database Type', 'find()', 'findByPk()'],
-            ['Small', <?php echo $findData['small']; ?>, <?php echo $pkData['small']; ?>],
-            ['Medium', <?php echo $findData['medium']; ?>, <?php echo $pkData['medium']; ?>],
-            ['Large', <?php echo $findData['large']; ?>, <?php echo $pkData['large']; ?>]
+            ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $findByPk_Yii['small']; ?>],
+            ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $findByPk_Yii['medium']; ?>],
+            ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $findByPk_Yii['large']; ?>]
         ]);
 
         var options = {
-            title: 'find() & findByPk()',
+            title: 'find() & findByPk() in Yii',
             hAxis: {title: 'Database size', titleTextStyle: {color: 'red'}}
         };
 
