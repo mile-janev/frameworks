@@ -143,7 +143,7 @@ class Site extends CI_Controller
             $this->l++;
         }
         
-        $this->saveTest("get()");
+        $this->saveTest("selectall");//get()
                 
         $this->load->view('site/result', array(
             'act' => 'get()',
