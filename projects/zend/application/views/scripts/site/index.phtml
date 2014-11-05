@@ -1,1 +1,34 @@
-Comming Soon!
+<div id="find-fetchRow" class="block-wrapper">
+    <h1>find() & fetchRow()</h1>
+    <div class="block-description">
+        Компарација помеѓу find() и fetchRow() со цел да се докаже дека е подобро да се користи
+        fetchRow() наместо find() кога како параметар за пребарување имаме примарен клуч.
+    </div>
+    <div class="block-chart">
+        <div id="chart-find-fetchRow"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Database Type', 'find()', 'fetchRow()'],
+            ['Small', <?php echo $this->findData['small']; ?>, <?php echo $this->fetchRowData['small']; ?>],
+            ['Medium', <?php echo $this->findData['medium']; ?>, <?php echo $this->fetchRowData['medium']; ?>],
+            ['Large', <?php echo $this->findData['large']; ?>, <?php echo $this->fetchRowData['large']; ?>]
+        ]);
+
+        var options = {
+            title: 'find() & fetchRow()',
+            hAxis: {title: 'Database size', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart-find-fetchRow'));
+
+        chart.draw(data, options);
+
+    }
+</script>
