@@ -1,34 +1,31 @@
 <div id="find-fetchRow" class="block-wrapper">
-    <h1>find() & fetchRow()</h1>
+    <h2>find() & fetchRow()</h2>
     <div class="block-description">
         Компарација помеѓу find() и fetchRow() со цел да се докаже дека е подобро да се користи
         fetchRow() наместо find() кога како параметар за пребарување имаме примарен клуч.
     </div>
     <div class="block-chart">
-        <div id="chart-find-fetchRow"></div>
+        <div id="chart1-zend"></div>
     </div>
 </div>
 
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
+    
     google.setOnLoadCallback(drawChart);
+    
     function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
             ['Database Type', 'find()', 'fetchRow()'],
             ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>],
             ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>],
             ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>]
         ]);
-
         var options = {
             title: 'find() & fetchRow() in Zend',
-            hAxis: {title: 'Database size', titleTextStyle: {color: 'red'}}
+            hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
         };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart-find-fetchRow'));
-
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart1-zend'));
         chart.draw(data, options);
-
     }
 </script>
