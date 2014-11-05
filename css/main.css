@@ -244,7 +244,9 @@ table tr th{
 }
 
 .block-wrapper{
-    
+    border-bottom: 1px solid #000000;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 .block-description{
     
