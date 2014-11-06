@@ -122,6 +122,9 @@ table tr th{
     background: #1e1a1b;
     color: #ffffff;
 }
+strong, b{
+    font-weight: bold;
+}
 
 /*My style start from here*/
 /*Menu design*/
