@@ -30,7 +30,7 @@
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                     height:500
                 };
-                var chart = new google.visualization.ColumnChart(document.getElementById('chart1-all'));
+                var chart = new google.visualization.BarChart(document.getElementById('chart1-all'));
                 chart.draw(data, options);
             }
             
@@ -45,7 +45,7 @@
                     title: 'Comparation between findAll(Yii), fetchAll(zend), get_where(codeigniter)',
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
-                var chart = new google.visualization.ColumnChart(document.getElementById('chart2-all'));
+                var chart = new google.visualization.LineChart(document.getElementById('chart2-all'));
                 chart.draw(data, options);
             }
             
