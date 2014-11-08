@@ -33,9 +33,9 @@ class Library {
                             //da dobieme kolku e prosekot na izvrseni upiti vo minuta
         
         $formatedArray['tests'] = count($results);
-        $formatedArray['small'] = $small*$interval;
-        $formatedArray['medium'] = $medium*$interval;
-        $formatedArray['large'] = $large*$interval;
+        $formatedArray['small'] = round($small*$interval);
+        $formatedArray['medium'] = round($medium*$interval);
+        $formatedArray['large'] = round($large*$interval);
         
         return $formatedArray;
     }
