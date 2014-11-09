@@ -51,7 +51,16 @@ class Site extends CI_Controller
     
     public function index()
     {
-        $this->load->view('site/index');
+        include_once $_SERVER['DOCUMENT_ROOT'].'/Library.php';
+        $object = new Library();
+        
+        $select_ci = $object->findStatistic('codeigniter', 'select');
+        $get_where_ci = $object->findStatistic('codeigniter', 'get_where()');
+        
+        $this->load->view('site/index', array(
+            'select_ci' => $select_ci,
+            'get_where_ci' => $get_where_ci
+        ));
     }
     
     /*Test custom query() -> row(). Select one post with condition*/
