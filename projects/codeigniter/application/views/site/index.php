@@ -6,7 +6,29 @@
         <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/main.css" />
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/main.js"></script>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>        
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        
+        <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+
+            google.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Database Type', 'Select one', 'get_where()'],
+                    ['Small', <?php echo $select_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
+                    ['Medium', <?php echo $select_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
+                    ['Large', <?php echo $select_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
+                ]);
+                var options = {
+                    title: 'Select one & get_where() in Codeigniter',
+                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
+                chart.draw(data, options);
+            }
+        </script>
+        
     </head>
 
     <body>
@@ -49,27 +71,6 @@
                 
             </div>
         </div>
-        
-        <script type="text/javascript">
-            google.load("visualization", "1", {packages:["corechart"]});
-
-            google.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'Select one', 'get_where()'],
-                    ['Small', <?php echo $select_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
-                    ['Medium', <?php echo $select_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
-                    ['Large', <?php echo $select_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
-                ]);
-                var options = {
-                    title: 'Select one & get_where() in Codeigniter',
-                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
-                };
-                var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
-                chart.draw(data, options);
-            }
-        </script>
         
     </body>
 </html>
