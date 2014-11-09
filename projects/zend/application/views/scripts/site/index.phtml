@@ -1,8 +1,32 @@
+<div class="block-wrapper">
+    <h1>Опис на методите</h1>
+    <div class="block-description">
+        <p>Опис на методите:</p>
+        <ul>
+            <li>
+                <strong>find()</strong>
+                - 
+                <span>Прима цел број (примарен клуч) како параметар а како резултат враќа еден ред од база.</span>
+            </li>
+            <li>
+                <strong>fetchRow()</strong>
+                - 
+                <span>Прима атрибут како параметар а како резултат враќа еден ред од база.</span>
+            </li>
+        </ul>
+    </div>
+    <div class="block-chart">
+        <div id="chart1-zend"></div>
+    </div>
+</div>
+
 <div id="find-fetchRow" class="block-wrapper">
     <h2>find() & fetchRow()</h2>
     <div class="block-description">
-        Компарација помеѓу find() и fetchRow() со цел да се докаже дека е подобро да се користи
-        fetchRow() наместо find() кога како параметар за пребарување имаме примарен клуч.
+        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел 
+            (Пример, сакаме да извадеме ред од база кога го имаме примарниот клуч).</p>
+        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
+            да го користиме методот find() одколку fetchRow() бидејки е многу побрз.</p>
     </div>
     <div class="block-chart">
         <div id="chart1-zend"></div>

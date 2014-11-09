@@ -27,7 +27,7 @@
                 ]);
                 var options = {
                     title: 'Select all records from table',
-                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+                    hAxis: {titleTextStyle: {color: 'red'}},
                     height:500
                 };
                 var chart = new google.visualization.BarChart(document.getElementById('chart1-all'));

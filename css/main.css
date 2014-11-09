@@ -260,3 +260,15 @@ strong, b{
 #find-findByPk{
     
 }
+.block-description ul{
+    
+}
+.block-description ul li{
+    list-style-type: disc;
+}
+.block-description ul li strong{
+    
+}
+.block-description ul li span{
+    
+}
