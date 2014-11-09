@@ -53,8 +53,14 @@ class Library {
     
     public function findStatistic($framework, $function)
     {
+        if (strpos($_SERVER['DOCUMENT_ROOT'],'wamp')) {
+            $password = "";
+        } else {
+            $password = "toor";
+        }
+        
         $mysql_database = "frameworks";
-        $db = @mysql_connect("localhost", "root", "toor") or die("Could not connect database");
+        $db = @mysql_connect("localhost", "root", $password) or die("Could not connect database");
         mysql_select_db($mysql_database, $db) or die("Could not select database");
         
         $query = "SELECT * FROM statistic WHERE framework = '$framework' AND function = '$function'";
