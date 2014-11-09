@@ -72,6 +72,7 @@ class Site extends CI_Controller
             $this->i++;
             $this->s++;
         }
+        $this->i = 1;
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
@@ -79,6 +80,7 @@ class Site extends CI_Controller
             $this->i++;
             $this->m++;
         }
+        $this->i = 1;
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
@@ -86,6 +88,7 @@ class Site extends CI_Controller
             $this->i++;
             $this->l++;
         }
+        $this->i = 1;
         
         $this->saveTest("select");
         
@@ -106,6 +109,7 @@ class Site extends CI_Controller
             $this->i++;
             $this->s++;
         }
+        $this->i = 1;
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
@@ -113,6 +117,7 @@ class Site extends CI_Controller
             $this->i++;
             $this->m++;
         }
+        $this->i = 1;
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
@@ -120,6 +125,7 @@ class Site extends CI_Controller
             $this->i++;
             $this->l++;
         }
+        $this->i = 1;
         
         $this->saveTest("get_where()");
         
@@ -155,11 +161,54 @@ class Site extends CI_Controller
         $this->saveTest("selectall");//get()
                 
         $this->load->view('site/result', array(
-            'act' => 'get()',
+            'act' => 'Select all',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
         ));
     }
+    
+    /*Test method get(). Select all results.*/
+    public function getmethod()
+    {
+        $small = microtime(true)+$this->t;
+        while ($small >= microtime(true)) {
+            $this->db->select('*');
+            $this->db->from('s_post');
+            $this->db->where('id',  $this->i);
+            $this->db->get()->result();
+            $this->s++;
+        }
+        $this->i = 1;
+
+        $medium = microtime(true)+$this->t;
+        while ($medium >= microtime(true)) {
+            $this->db->select('*');
+            $this->db->from('m_post');
+            $this->db->where('id',  $this->i);
+            $this->db->get()->result();
+            $this->m++;
+        }
+        $this->i = 1;
+
+        $large = microtime(true)+$this->t;
+        while ($large >= microtime(true)) {
+            $this->db->select('*');
+            $this->db->from('l_post');
+            $this->db->where('id',  $this->i);
+            $this->db->get()->result();
+            $this->l++;
+        }
+        $this->i = 1;
+        
+        $this->saveTest("get()");//get()
+                
+        $this->load->view('site/result', array(
+            'act' => 'get()',
+            'small' => $this->s,
+            'medium' => $this->m,
+            'large' => $this->l
+        ));
+    }  
     
 }

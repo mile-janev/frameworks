@@ -76,6 +76,9 @@
             <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getwhere\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getwhere/">get_where()</a>
             </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getmethod\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getmethod/">get()</a>
+            </li>
         </ul>
     </li>
 <!--    <li<?php echo (preg_match('/laravel/',$currentUrl)) ? ' class="active"' : ''; ?>>
