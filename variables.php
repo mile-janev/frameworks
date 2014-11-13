@@ -11,5 +11,5 @@
     
     $find_Yii = $object->findStatistic('yii', 'find()');
     $fetchRow_Zend = $object->findStatistic('zend', 'fetchRow()');
-    $get_where_CI = $object->findStatistic('codeigniter', 'get_where()');
+    $get = $object->findStatistic('codeigniter', 'get()');
 ?>
