@@ -12,11 +12,11 @@
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/selectall/">Select All</a>
             </li>
-            <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/find/">find()</a>
-            </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbypk\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbypk/">findByPk()</a>
+            </li>
+            <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/find/">find()</a>
             </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbyattributes\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbyattributes/">findByAttributes()</a>
@@ -38,26 +38,6 @@
             </li>
         </ul>
     </li>
-    <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
-        <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/index/">Codeigniter</a>
-        <ul class="subMenu">
-            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/index\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/index/">Statistic</a>
-            </li>
-            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectall/">Select All</a>
-            </li>
-            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/select\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/select/">Select one</a>
-            </li>
-            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getwhere\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getwhere/">get_where()</a>
-            </li>
-            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getmethod\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getmethod/">get()</a>
-            </li>
-        </ul>
-    </li>
     <li<?php echo (preg_match('/zend/',$currentUrl)) ? ' class="active"' : ''; ?>>
         <a href="<?php echo $serverName; ?>/projects/zend/public/site/index/">Zend</a>
         <ul class="subMenu">
@@ -67,17 +47,37 @@
             <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/zend/public/site/selectall/">Select All</a>
             </li>
-            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchrow\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchrow/">fetchRow()</a>
-            </li>
             <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/zend/public/site/find/">find()</a>
             </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchrow\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchrow/">fetchRow()</a>
+            </li>            
             <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchall/">fetchAll()</a>
             </li>
             <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetch\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetch/">fetch()</a>
+            </li>
+        </ul>
+    </li>
+    <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
+        <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/index/">Codeigniter</a>
+        <ul class="subMenu">
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/index\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/index/">Statistic</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/selectall/">Select All</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getwhere\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getwhere/">get_where()</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/getmethod\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/getmethod/">get()</a>
+            </li>
+            <li<?php echo (preg_match('/codeigniter/',$currentUrl) && preg_match('/site\/querymethod\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/codeigniter/index.php/site/querymethod/">query()</a>
             </li>
         </ul>
     </li>

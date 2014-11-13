@@ -52,12 +52,12 @@
             function drawChart3() {
                 var data = google.visualization.arrayToDataTable([
                     ['Database Type', 'Yii', 'Zend', 'Codeigniter'],
-                    ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $fetchRow_Zend['small']; ?>, <?php echo $select_CI['small']; ?>],
-                    ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $fetchRow_Zend['medium']; ?>, <?php echo $select_CI['medium']; ?>],
-                    ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $fetchRow_Zend['large']; ?>, <?php echo $select_CI['large']; ?>]
+                    ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $fetchRow_Zend['small']; ?>, <?php echo $get_where_CI['small']; ?>],
+                    ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $fetchRow_Zend['medium']; ?>, <?php echo $get_where_CI['medium']; ?>],
+                    ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $fetchRow_Zend['large']; ?>, <?php echo $get_where_CI['large']; ?>]
                 ]);
                 var options = {
-                    title: 'Comparation between find(Yii), fetchRow(zend), select(codeigniter)',
+                    title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart3-all'));

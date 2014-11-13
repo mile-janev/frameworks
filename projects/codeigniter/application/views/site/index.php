@@ -15,13 +15,13 @@
 
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'Select one', 'get_where()'],
-                    ['Small', <?php echo $select_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
-                    ['Medium', <?php echo $select_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
-                    ['Large', <?php echo $select_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
+                    ['Database Type', 'query()', 'get_where()'],
+                    ['Small', <?php echo $query_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
+                    ['Medium', <?php echo $query_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
+                    ['Large', <?php echo $query_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
                 ]);
                 var options = {
-                    title: 'Select one & get_where() in Codeigniter',
+                    title: 'query() & get_where() in Codeigniter',
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
@@ -44,7 +44,7 @@
                         <p>Опис на методите:</p>
                         <ul>
                             <li>
-                                <strong>Select one</strong>
+                                <strong>query()</strong>
                                 - 
                                 <span>Селектираме само еден ред според custom query.</span>
                             </li>
@@ -57,12 +57,12 @@
                     </div>
                 </div>
                 
-                <div id="selectone-get_where" class="block-wrapper">
-                    <h2>Select one & get_where()</h2>
+                <div id="query-get_where" class="block-wrapper">
+                    <h2>query() & get_where()</h2>
                     <div class="block-description">
-                        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел).</p>
+                        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел.</p>
                         <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-                            да користиме custom query одколку get_where() методот бидејки е многу побрзо.</p>
+                            да користиме query() одколку get_where() методот бидејки е многу побрзо.</p>
                     </div>
                     <div class="block-chart">
                         <div id="chart1-codeigniter"></div>

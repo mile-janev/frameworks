@@ -54,21 +54,21 @@ class Site extends CI_Controller
         include_once $_SERVER['DOCUMENT_ROOT'].'/Library.php';
         $object = new Library();
         
-        $select_ci = $object->findStatistic('codeigniter', 'select');
+        $query_ci = $object->findStatistic('codeigniter', 'query()');
         $get_where_ci = $object->findStatistic('codeigniter', 'get_where()');
         
         $this->load->view('site/index', array(
-            'select_ci' => $select_ci,
+            'query_ci' => $query_ci,
             'get_where_ci' => $get_where_ci
         ));
     }
     
-    /*Test custom query() -> row(). Select one post with condition*/
-    public function select()
+    /*Test custom query("custom query"). Select more posts with condition*/
+    public function querymethod()
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i)->row();
+            $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
             $this->i++;
             $this->s++;
         }
@@ -76,7 +76,7 @@ class Site extends CI_Controller
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $this->db->query("SELECT * FROM m_post WHERE id = ".$this->i)->row();
+            $this->db->query("SELECT * FROM m_post WHERE id = ".$this->i);
             $this->i++;
             $this->m++;
         }
@@ -84,7 +84,7 @@ class Site extends CI_Controller
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $this->db->query("SELECT * FROM l_post WHERE id = ".$this->i)->row();
+            $this->db->query("SELECT * FROM l_post WHERE id = ".$this->i);
             $this->i++;
             $this->l++;
         }
@@ -93,19 +93,19 @@ class Site extends CI_Controller
         $this->saveTest("select");
         
         $this->load->view('site/result', array(
-            'act' => 'Select one',
+            'act' => 'query()',
             'small' => $this->s,
             'medium' => $this->m,
             'large' => $this->l
         ));
     }
     
-    /*Test method fet_where()*/
+    /*Test method get_where(). Select one record with condition.*/
     public function getwhere()
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->db->get_where('s_post', array('id'=>$this->i))->result();
+            $this->db->get_where('s_post', array('id'=>$this->i));
             $this->i++;
             $this->s++;
         }
@@ -113,7 +113,7 @@ class Site extends CI_Controller
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $this->db->get_where('m_post', array('id'=>$this->i))->result();
+            $this->db->get_where('m_post', array('id'=>$this->i));
             $this->i++;
             $this->m++;
         }
@@ -121,7 +121,7 @@ class Site extends CI_Controller
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $this->db->get_where('l_post', array('id'=>$this->i))->result();
+            $this->db->get_where('l_post', array('id'=>$this->i));
             $this->i++;
             $this->l++;
         }
@@ -142,19 +142,19 @@ class Site extends CI_Controller
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->db->get('s_post')->result();
+            $this->db->get('s_post');
             $this->s++;
         }
 
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $this->db->get('m_post')->result();
+            $this->db->get('m_post');
             $this->m++;
         }
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $this->db->get('l_post')->result();
+            $this->db->get('l_post');
             $this->l++;
         }
         
@@ -168,7 +168,7 @@ class Site extends CI_Controller
         ));
     }
     
-    /*Test method get(). Select all results.*/
+    /*Test method get(). Select more results.*/
     public function getmethod()
     {
         $small = microtime(true)+$this->t;
@@ -176,7 +176,7 @@ class Site extends CI_Controller
             $this->db->select('*');
             $this->db->from('s_post');
             $this->db->where('id',  $this->i);
-            $this->db->get()->result();
+            $this->db->get();
             $this->s++;
         }
         $this->i = 1;
@@ -186,7 +186,7 @@ class Site extends CI_Controller
             $this->db->select('*');
             $this->db->from('m_post');
             $this->db->where('id',  $this->i);
-            $this->db->get()->result();
+            $this->db->get();
             $this->m++;
         }
         $this->i = 1;
@@ -196,7 +196,7 @@ class Site extends CI_Controller
             $this->db->select('*');
             $this->db->from('l_post');
             $this->db->where('id',  $this->i);
-            $this->db->get()->result();
+            $this->db->get();
             $this->l++;
         }
         $this->i = 1;

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Забелешки</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div>
+            <h1>Дијаграми</h1>
+            <ol>
+                <li>Site frameworci komparacija na "Select All" akciite.</li>
+                <li>Site frameworci komparacija megu findAll(Yii), fetchAll(zend), get_where(codeigniter)</li>
+                <li>Site frameworci komparacija megju find(Yii), fetchRow(zend), Select one (codeigniter)</li>
+                <li>Yii, komparacija megju find() i findByPk() so cel da se dokaze deka e podobro da se koristi findByPk() namesto find() koga imame primaren kluc</li>
+                <li>Zend, komparacija megju find() i fetchRow() so cel da se dokaze deka e podobro da se koristi find() namesto fetchRow() koga imame primaren kluc</li>
+            </ol>
+        </div>
+        <hr />
+        <div>
+            <h1>Функции</h1>
+            
+            <h3>Yii</h3>
+            <ol>
+                <li>
+                    <b></b>
+                    -
+                    <span></span>
+                </li>
+            </ol>
+            
+            <h3>Zend</h3>
+            <ol>
+                <li>
+                    <b>Select All - fetchAll() - selectallAction()</b>
+                    -
+                    <span>Сите записи со користење на fetchAll() методот.</span>
+                </li>
+                <li>
+                    <b>find() - findAction()</b>
+                    -
+                    <span>
+                        Еден запис со користење на find() методот, кој прима
+                        примарен клуч како параметар а враќа еден ред од база.
+                    </span>
+                </li>
+                <li>
+                    <b>fetchRow() - fetchrowAction()</b>
+                    -
+                    <span>
+                        Еден запис со користење на fetchRow() методот, кој прима атрибут
+                        и вредност на атрибутот како параметар а враќа еден ред од база.
+                    </span>
+                </li>
+                <li>
+                    <b>fetchAll() - fetchallAction()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на fetchAll() методот, кој прима атрибут и 
+                        вредност на атрибут како параметар а враќа соодветни записи од база
+                    </span>
+                </li>
+                <li>
+                    <b>fetch() - fetchAction()</b>
+                    -
+                    <span>Еден запис со користење на fetch() методот на query object.</span>
+                </li>
+            </ol>
+            
+            <h3>Codeigniter</h3>
+            <ol>
+                <li>
+                    <b>Select All - selectall() - get()</b>
+                    -
+                    <span>
+                        Сите записи со користење на get() методот.
+                    </span>
+                </li>
+                <li>
+                    <b>get_where() - getwhere()</b>
+                    -
+                    <span>
+                        Еден запис со користење на методот get_where().
+                    </span>
+                </li>
+                <li>
+                    <b>get() - getmethod()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на get() методот.
+                    </span>
+                </li>
+                <li>
+                    <b>query() - querymethod()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на custom query, односно
+                        $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
+                    </span>
+                </li>
+            </ol>
+            
+            <h3>Слични</h3>
+            <ol>
+                <li>
+                    <b></b>
+                    -
+                    <span></span>
+                </li>
+            </ol>
+            
+        </div>
+        
+    </body>
+</html>
