@@ -81,27 +81,4 @@
             </li>
         </ul>
     </li>
-    <li<?php echo (preg_match('/zend2/',$currentUrl)) ? ' class="active"' : ''; ?>>
-        <a href="<?php echo $serverName; ?>/projects/zend2/public/site/index/">Zend 2</a>
-        <ul class="subMenu">
-            <li<?php echo (preg_match('/zend2/',$currentUrl) && preg_match('/site\/index\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend2/public/site/index/">Statistic</a>
-            </li>
-            <li<?php echo (preg_match('/zend2/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend2/public/site/selectall/">Select All</a>
-            </li>
-            <li<?php echo (preg_match('/zend2/',$currentUrl) && preg_match('/site\/fetchrow\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend2/public/site/fetchrow/">fetchRow()</a>
-            </li>
-            <li<?php echo (preg_match('/zend2/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend2/public/site/find/">find()</a>
-            </li>
-            <li<?php echo (preg_match('/zend2/',$currentUrl) && preg_match('/site\/fetchall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend2/public/site/fetchall/">fetchAll()</a>
-            </li>
-            <li<?php echo (preg_match('/zend2/',$currentUrl) && preg_match('/site\/fetch\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend2/public/site/fetch/">fetch()</a>
-            </li>
-        </ul>
-    </li>
 </ul>
