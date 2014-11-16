@@ -56,10 +56,12 @@ class Site extends CI_Controller
         
         $query_ci = $object->findStatistic('codeigniter', 'query()');
         $get_where_ci = $object->findStatistic('codeigniter', 'get_where()');
+        $get_ci = $object->findStatistic('codeigniter', 'get()');
         
         $this->load->view('site/index', array(
             'query_ci' => $query_ci,
-            'get_where_ci' => $get_where_ci
+            'get_where_ci' => $get_where_ci,
+            'get_ci' => $get_ci
         ));
     }
     
@@ -90,7 +92,7 @@ class Site extends CI_Controller
         }
         $this->i = 1;
         
-        $this->saveTest("select");
+        $this->saveTest("query()");
         
         $this->load->view('site/result', array(
             'act' => 'query()',

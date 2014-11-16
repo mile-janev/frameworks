@@ -15,13 +15,13 @@
 
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'query()', 'get_where()'],
-                    ['Small', <?php echo $query_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
-                    ['Medium', <?php echo $query_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
-                    ['Large', <?php echo $query_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
+                    ['Database Type', 'query()', 'get()', 'get_where()'],
+                    ['Small', <?php echo $query_ci['small']; ?>, <?php echo $get_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
+                    ['Medium', <?php echo $query_ci['medium']; ?>, <?php echo $get_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
+                    ['Large', <?php echo $query_ci['large']; ?>, <?php echo $get_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
                 ]);
                 var options = {
-                    title: 'query() & get_where() in Codeigniter',
+                    title: 'query(), get() & get_where() in Codeigniter',
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
@@ -46,7 +46,12 @@
                             <li>
                                 <strong>query()</strong>
                                 - 
-                                <span>Селектираме само еден ред според custom query.</span>
+                                <span>Селектира еден или повеќе редови со користење custom query.</span>
+                            </li>
+                            <li>
+                                <strong>get()</strong>
+                                - 
+                                <span>Селектираме еден или повеќе редови според методот get кој е дел од Active Record класата.</span>
                             </li>
                             <li>
                                 <strong>get_where()</strong>
@@ -58,11 +63,10 @@
                 </div>
                 
                 <div id="query-get_where" class="block-wrapper">
-                    <h2>query() & get_where()</h2>
+                    <h2>query(), get() & get_where()</h2>
                     <div class="block-description">
-                        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел.</p>
-                        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-                            да користиме query() одколку get_where() методот бидејки е многу побрзо.</p>
+                        <p>Постојат случаеви во кои query(), get() и get_where() методite можеме да ги користеме за иста цел.</p>
+                        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.</p>
                     </div>
                     <div class="block-chart">
                         <div id="chart1-codeigniter"></div>
