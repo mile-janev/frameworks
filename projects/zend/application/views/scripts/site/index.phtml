@@ -11,7 +11,17 @@
             <li>
                 <strong>fetchRow()</strong>
                 - 
-                <span>Прима атрибут како параметар а како резултат враќа еден ред од база.</span>
+                <span>Прима атрибут и вредност на атрибут како параметар а како резултат враќа еден ред од база.</span>
+            </li>
+            <li>
+                <strong>fetch()</strong>
+                - 
+                <span>Враќа еден ред со користење на fetch() методот на query object.</span>
+            </li>
+            <li>
+                <strong>fetchAll()</strong>
+                - 
+                <span>Прима атрибут и вредност на атрибут како параметар а враќа еден или повеќе редови од база.</span>
             </li>
         </ul>
     </div>
@@ -40,13 +50,13 @@
     
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Database Type', 'find()', 'fetchRow()'],
-            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>],
-            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>],
-            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>]
+            ['Database Type', 'find()', 'fetchRow()', 'fetch()', 'fetchAll()'],
+            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->fetch_zend['small']; ?>, <?php echo $this->fetchAll_zend['small']; ?>],
+            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>, <?php echo $this->fetch_zend['medium']; ?>, <?php echo $this->fetchAll_zend['medium']; ?>],
+            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>, <?php echo $this->fetch_zend['large']; ?>, <?php echo $this->fetchAll_zend['large']; ?>]
         ]);
         var options = {
-            title: 'find() & fetchRow() in Zend',
+            title: 'find(), fetchRow(), fetch(), fetchAll() in Zend',
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart1-zend'));
