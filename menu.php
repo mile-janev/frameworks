@@ -81,4 +81,7 @@
             </li>
         </ul>
     </li>
+     <li<?php echo (preg_match('/database/',$currentUrl)) ? ' class="active"' : ''; ?>>
+        <a href="<?php echo $serverName; ?>/database/notes.html">Notes</a>
+     </li>
 </ul>
