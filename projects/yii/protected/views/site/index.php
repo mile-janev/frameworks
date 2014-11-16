@@ -38,13 +38,29 @@
     
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Database Type', 'findByPk()', 'find()'],
-            ['Small', <?php echo $findByPk_Yii['small']; ?>, <?php echo $find_Yii['small']; ?>],
-            ['Medium', <?php echo $findByPk_Yii['medium']; ?>, <?php echo $find_Yii['medium']; ?>],
-            ['Large', <?php echo $findByPk_Yii['large']; ?>, <?php echo $find_Yii['large']; ?>]
+            [
+                'Database Type',
+                'find()', 'findByPk()', 'findByAttributes()', 'findBySql()',
+                'findAll()', 'findAllByPk()', 'findAllByAttributes()', 'findAllBySql()'
+            ],
+            [
+                'Small', 
+                <?php echo $find_Yii['small']; ?>, <?php echo $findByPk_Yii['small']; ?>, <?php echo $findByAttributes_Yii['small']; ?>, <?php echo $findBySql_Yii['small']; ?>,
+                <?php echo $find_Yii['small']; ?>, <?php echo $findByPk_Yii['small']; ?>, <?php echo $findByAttributes_Yii['small']; ?>, <?php echo $findBySql_Yii['small']; ?>
+            ],
+            [
+                'Medium', 
+                <?php echo $find_Yii['medium']; ?>, <?php echo $findByPk_Yii['medium']; ?>, <?php echo $findByAttributes_Yii['medium']; ?>, <?php echo $findBySql_Yii['medium']; ?>,
+                <?php echo $findAll_Yii['medium']; ?>, <?php echo $findAllByPk_Yii['medium']; ?>, <?php echo $findAllByAttributes_Yii['medium']; ?>, <?php echo $findAllBySql_Yii['medium']; ?>
+            ],
+            [
+                'Large', 
+               <?php echo $find_Yii['large']; ?>, <?php echo $findByPk_Yii['large']; ?>, <?php echo $findByAttributes_Yii['large']; ?>, <?php echo $findBySql_Yii['large']; ?>,
+                <?php echo $findAll_Yii['large']; ?>, <?php echo $findAllByPk_Yii['large']; ?>, <?php echo $findAllByAttributes_Yii['large']; ?>, <?php echo $findAllBySql_Yii['large']; ?>
+            ]
         ]);
         var options = {
-            title: 'findByPk() & find() in Yii',
+            title: 'find(), findByPk(), findByAttributes(), findBySql(), findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart1-yii'));

@@ -401,15 +401,24 @@ class SiteController extends Controller
         include_once $_SERVER['DOCUMENT_ROOT'].'/Library.php';
         $object = new Library();
         
-        /*find()*/
-        $find_Yii = $object->findStatistic('yii', 'find()');
-        
-        /*findByPk()*/
+        $find_Yii = $object->findStatistic('yii', 'find()');      
         $findByPk_Yii = $object->findStatistic('yii', 'findByPk()');
+        $findByAttributes_Yii = $object->findStatistic('yii', 'findByAttributes()');
+        $findBySql_Yii = $object->findStatistic('yii', 'findBySql()');
+        $findAll_Yii = $object->findStatistic('yii', 'findAll()');      
+        $findAllByPk_Yii = $object->findStatistic('yii', 'findAllByPk()');
+        $findAllByAttributes_Yii = $object->findStatistic('yii', 'findAllByAttributes()');
+        $findAllBySql_Yii = $object->findStatistic('yii', 'findAllBySql()');
         
         $this->render('index',array(
             'find_Yii'=>$find_Yii,
-            'findByPk_Yii'=>$findByPk_Yii
+            'findByPk_Yii'=>$findByPk_Yii,
+            'findByAttributes_Yii'=>$findByAttributes_Yii,
+            'findBySql_Yii'=>$findBySql_Yii,
+            'findAll_Yii'=>$findAll_Yii,
+            'findAllByPk_Yii'=>$findAllByPk_Yii,
+            'findAllByAttributes_Yii'=>$findAllByAttributes_Yii,
+            'findAllBySql_Yii'=>$findAllBySql_Yii,
         ));
     }    
 }

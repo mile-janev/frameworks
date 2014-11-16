@@ -12,12 +12,12 @@
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/selectall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/selectall/">Select All</a>
             </li>
-            <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbypk\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbypk/">findByPk()</a>
-            </li>
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/find\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/find/">find()</a>
             </li>
+            <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbypk\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbypk/">findByPk()</a>
+            </li>            
             <li<?php echo (preg_match('/yii/',$currentUrl) && preg_match('/site\/findbyattributes\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/findbyattributes/">findByAttributes()</a>
             </li>
