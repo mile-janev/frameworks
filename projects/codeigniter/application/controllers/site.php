@@ -70,9 +70,7 @@ class Site extends CI_Controller
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $bla = $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
-            var_dump($bla);
-            exit();
+            $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
             $this->i++;
             $this->s++;
         }
