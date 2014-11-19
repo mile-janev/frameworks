@@ -1,11 +1,9 @@
 <div class="block-wrapper">
     <h2>Methods description:</h2>
-    <h5>
-        <p>All methods who start with word 'find' return one result from database, or null if results are not found.</p>
-        <p>All methods who start with word 'findAll' return array of results, or empty array if results are not found.</p>
-        <p>Every 'find' method has corresponding 'findAll' method.</p>
-        <p>Every single result is an object who contains attributes with corresponding columns from database table.</p>
-    </h5>
+    <h5>All methods who start with word 'find' return one result from database, or null if results are not found.</h5>
+    <h5>All methods who start with word 'findAll' return array of results, or empty array if results are not found.</h5>
+    <h5>Every 'find' method has corresponding 'findAll' method.</h5>
+    <h5>Every single result is an object who contains attributes with corresponding columns from database table.</h5>
     <div class="block-description">
         <ul>
             <li>

@@ -1,28 +1,44 @@
 <div class="block-wrapper">
-    <h1>Опис на методите</h1>
+    <h2>Methods description:</h2>
     <div class="block-description">
-        <p>Опис на методите:</p>
         <ul>
             <li>
                 <strong>find()</strong>
                 - 
-                <span>Прима цел број (примарен клуч) како параметар а како резултат враќа еден ред од база.</span>
+                <span>
+                    Receiving integer (primary key for table) or array of integers as parameter.
+                    Return an object of class Zend_Db_Table_Rowset.
+                    Object with empty data is returned if record is not founded.
+                </span>
             </li>
             <li>
                 <strong>fetchRow()</strong>
                 - 
-                <span>Прима атрибут и вредност на атрибут како параметар а како резултат враќа еден ред од база.</span>
-            </li>
-            <li>
-                <strong>fetch()</strong>
-                - 
-                <span>Враќа еден ред со користење на fetch() методот на query object.</span>
+                <span>
+                    Receiving a string like query condition (example: "id=".$id).
+                    Return an object from class Zend_Db_Table_Row if record is found,
+                    or null if record is not founded.
+                </span>
             </li>
             <li>
                 <strong>fetchAll()</strong>
                 - 
-                <span>Прима атрибут и вредност на атрибут како параметар а враќа еден или повеќе редови од база.</span>
+                <span>
+                    Receiving a string like query condition (example: "id=".$id).
+                    Return an object from class Zend_Db_Table_Rowset.
+                    Object with empty data is returned if record is not founded.
+                </span>
             </li>
+            <li>
+                <strong>Zend_Db_Select</strong>
+                - 
+                <span>
+                    The Zend_Db_Select object represents a SQL SELECT query statement.
+                    The class has methods for adding individual parts to the query.
+                    Using this way of selecting records requires using of fetch() or fetchAll()
+                    on this object, so all records will be fetched into array or array of arrays.
+                </span>
+            </li>            
         </ul>
     </div>
 </div>
@@ -50,13 +66,13 @@
     
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Database Type', 'find()', 'fetchRow()', 'fetch()', 'fetchAll()'],
-            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->fetch_zend['small']; ?>, <?php echo $this->fetchAll_zend['small']; ?>],
-            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>, <?php echo $this->fetch_zend['medium']; ?>, <?php echo $this->fetchAll_zend['medium']; ?>],
-            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>, <?php echo $this->fetch_zend['large']; ?>, <?php echo $this->fetchAll_zend['large']; ?>]
+            ['Database Type', 'find()', 'fetchRow()', 'Zend_Db_Select', 'fetchAll()'],
+            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->dbselect_zend['small']; ?>, <?php echo $this->fetchAll_zend['small']; ?>],
+            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>, <?php echo $this->dbselect_zend['medium']; ?>, <?php echo $this->fetchAll_zend['medium']; ?>],
+            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>, <?php echo $this->dbselect_zend['large']; ?>, <?php echo $this->fetchAll_zend['large']; ?>]
         ]);
         var options = {
-            title: 'find(), fetchRow(), fetch(), fetchAll() in Zend',
+            title: 'find(), fetchRow(), Zend_Db_Select, fetchAll() in Zend',
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300
         };
