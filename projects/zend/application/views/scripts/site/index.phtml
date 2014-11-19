@@ -25,6 +25,9 @@
             </li>
         </ul>
     </div>
+</div>
+
+<div class="block-wrapper">
     <div class="block-chart">
         <div id="chart1-zend"></div>
     </div>
@@ -37,9 +40,6 @@
             (Пример, сакаме да извадеме ред од база кога го имаме примарниот клуч).</p>
         <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
             да го користиме методот find() одколку fetchRow() бидејки е многу побрз.</p>
-    </div>
-    <div class="block-chart">
-        <div id="chart1-zend"></div>
     </div>
 </div>
 
@@ -57,7 +57,8 @@
         ]);
         var options = {
             title: 'find(), fetchRow(), fetch(), fetchAll() in Zend',
-            hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
+            hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+            height: 300
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart1-zend'));
         chart.draw(data, options);

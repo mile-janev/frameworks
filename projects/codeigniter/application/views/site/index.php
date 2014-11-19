@@ -22,7 +22,8 @@
                 ]);
                 var options = {
                     title: 'query(), get() & get_where() in Codeigniter',
-                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
+                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+                    height: 300
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
                 chart.draw(data, options);
@@ -62,14 +63,17 @@
                     </div>
                 </div>
                 
+                <div class="block-wrapper">
+                    <div class="block-chart">
+                        <div id="chart1-codeigniter"></div>
+                    </div>
+                </div>
+                
                 <div id="query-get_where" class="block-wrapper">
                     <h2>query(), get() & get_where()</h2>
                     <div class="block-description">
                         <p>Постојат случаеви во кои query(), get() и get_where() методite можеме да ги користеме за иста цел.</p>
                         <p>Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.</p>
-                    </div>
-                    <div class="block-chart">
-                        <div id="chart1-codeigniter"></div>
                     </div>
                 </div>
                 
