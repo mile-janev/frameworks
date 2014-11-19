@@ -52,13 +52,13 @@
             </li>
             <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchrow\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchrow/">fetchRow()</a>
-            </li>    
-            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetch\//',$currentUrl)) ? ' class="active"' : ''; ?>>
-                <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetch/">fetch()</a>
             </li>
             <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/fetchall\//',$currentUrl)) ? ' class="active"' : ''; ?>>
                 <a href="<?php echo $serverName; ?>/projects/zend/public/site/fetchall/">fetchAll()</a>
-            </li>            
+            </li>
+            <li<?php echo (preg_match('/zend/',$currentUrl) && preg_match('/site\/zenddbselect\//',$currentUrl)) ? ' class="active"' : ''; ?>>
+                <a href="<?php echo $serverName; ?>/projects/zend/public/site/zenddbselect/">Zend_Db_Select</a>
+            </li>
         </ul>
     </li>
     <li<?php echo (preg_match('/codeigniter/',$currentUrl)) ? ' class="active"' : ''; ?>>
