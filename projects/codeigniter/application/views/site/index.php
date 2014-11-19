@@ -40,24 +40,37 @@
             <div class="container" id="page">
                 
                 <div class="block-wrapper">
-                    <h1>Опис на методите</h1>
+                    <h2>Methods description:</h2>
+                    <h5>
+                        All methods return object of class CI_DB_mysql_result.
+                        Requires using of row() or result() on this object, so all records
+                        will be fetched into stdClass object or array of objects from stdClass.
+                    </h5>
                     <div class="block-description">
-                        <p>Опис на методите:</p>
                         <ul>
                             <li>
-                                <strong>query()</strong>
+                                <strong>get_where()</strong>
                                 - 
-                                <span>Селектира еден или повеќе редови со користење custom query.</span>
+                                <span>
+                                    Receiving four parameters:
+                                    First is table name (string),
+                                    second is condition (array of key=>value, where 'key' is table column and 'value' is our condition),
+                                    third is limit and fourth is offset. Third and fourth parameters are not mandatory.
+                                </span>
                             </li>
                             <li>
                                 <strong>get()</strong>
                                 - 
-                                <span>Селектираме еден или повеќе редови според методот get кој е дел од Active Record класата.</span>
+                                <span>
+                                    Custom partial query.
+                                </span>
                             </li>
                             <li>
-                                <strong>get_where()</strong>
+                                <strong>query()</strong>
                                 - 
-                                <span>Селектираме еден ред според методот get_where кој е дел од Active Record класата.</span>
+                                <span>
+                                    Custom query prepared for direct executing in database.
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -72,7 +85,7 @@
                 <div id="query-get_where" class="block-wrapper">
                     <h2>query(), get() & get_where()</h2>
                     <div class="block-description">
-                        <p>Постојат случаеви во кои query(), get() и get_where() методite можеме да ги користеме за иста цел.</p>
+                        <p>Постојат случаеви во кои query(), get() и get_where() методите можеме да ги користеме за иста цел.</p>
                         <p>Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.</p>
                     </div>
                 </div>
