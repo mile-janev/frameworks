@@ -88,14 +88,25 @@
     </div>
 </div>
 
-<div id="findByPk-find" class="block-wrapper">
-    <h2>findByPk() & find()</h2>
+<div class="block-wrapper">
+    
+    <h2>Different methods for same purpose</h2>
     <div class="block-description">
-        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел 
-            (Пример, сакаме да извадеме ред од база кога го имаме примарниот клуч).</p>
-        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-            да го користиме методот findByPk() одколку find() бидејки е многу побрз.</p>
+        <p>
+            Somethimes we have cases where multiple methods can be used for same purpose.
+        </p>
     </div>
+    
+    <div class="block-wrapper-inner">
+        <h3>findByPk() & find()</h3>
+        <div class="block-description">
+            <p>
+                Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
+                да го користиме методот findByPk() одколку find() бидејки е многу побрз.
+            </p>
+        </div>
+    </div>
+    
 </div>
 
 <script type="text/javascript">

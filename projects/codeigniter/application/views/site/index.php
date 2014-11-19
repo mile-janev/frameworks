@@ -83,11 +83,23 @@
                 </div>
                 
                 <div id="query-get_where" class="block-wrapper">
-                    <h2>query(), get() & get_where()</h2>
+                    
+                    <h2>Different methods for same purpose</h2>
                     <div class="block-description">
-                        <p>Постојат случаеви во кои query(), get() и get_where() методите можеме да ги користеме за иста цел.</p>
-                        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.</p>
+                        <p>
+                            Somethimes we have cases where multiple methods can be used for same purpose.
+                        </p>
                     </div>
+
+                    <div class="block-wrapper-inner">
+                        <h3>query(), get() & get_where()</h3>
+                        <div class="block-description">
+                            <p>
+                                Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.
+                            </p>
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>

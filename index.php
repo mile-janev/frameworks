@@ -28,7 +28,7 @@
                 var options = {
                     title: 'Select all records from table',
                     hAxis: {titleTextStyle: {color: 'red'}},
-                    height:500
+                    height:300
                 };
                 var chart = new google.visualization.BarChart(document.getElementById('chart1-all'));
                 chart.draw(data, options);
@@ -74,31 +74,45 @@
                 <div id="introduction" class="block-wrapper">
                     <h1>PHP Frameworks Speed Benchmark</h1>
                     <div class="block-description">
-                        <p>Целта на проектот е да се провери кои PHP фрејмворци се најбрзи при операциите со бази на податоци.</p>
                         <p>
-                            Во проектот користиме 3 табели, во кои имаме различен број на податоци и тоа:
+                            Project purpose is to compare speed in selecting records from database
+                            in some of most used PHP frameworks.
+                        </p>
+                        <p>
+                            Project have two goals:
+                            First is to compare methods speed for selecting records from database internaly for each framework.
+                            Second is to determinate which of compared frameworks is fastest in selecting records from database.                            
+                        </p>
+                        <p>
+                            We have 3 tables in database with different number of records:
+                            
                             <ul>
-                                <li>s_post - 10 000 податоци</li>
-                                <li>m_post - 100 000 податоци</li>
-                                <li>l_post - 300 000 податоци</li>
+                                <li>s_post - 10 000 records</li>
+                                <li>m_post - 100 000 records</li>
+                                <li>l_post - 300 000 records</li>
                             </ul>
                         </p>
                         <p>
-                            Сите PHP фрејмворци користат <b>Active Record</b> за операции со бази на податоци.
-                            Active Record е патерн според кој табела од база се мапира во класа.
-                            Active Record класите имаат свои методи за селектирање, едитирање или бришење на запис од база.
+                            Almost all PHP frameworks use <b>Active Record</b> for database transactions.
+                            Active Record is a pattern where every table from database is mapped into class.
+                            Active Record casses have there own methods for selecting, editing and deleting record from database.
                         </p>
                         <p>
-                            Ние ги користиме Active Record класите на фрејмворците со цел да откриеме
-                            кој фрејмворк најбрзо се справува со операциите на селектирање на запис од база.
+                            We are using Active Record classes of frameworks to determinate which framework
+                            is faster in select operations.
                         </p>
                         <p>
-                            <b>Правиме споредба помеѓу методите кои ја имаат истата функција во различен фрејмворк,
-                                и на тој начин откриваме кој е побрз.</b>
+                            <b>
+                                Comparing similar methods in different frameworks allows us to determine
+                                which framework is faster.
+                            </b>
                         </p>
                         <p>
-                            <b>Правиме споредба во три различни типа на табели со цел да откриеме како ќе се однесуваат при
-                                различен број на податоци.</b>
+                            <b>
+                                Comparing three different table sizes will allows us to discover
+                                how they will behave with increasing number of data.
+                                This is very important question for choosing right framework for new project.
+                            </b>
                         </p>
                     </div>
                 </div>
@@ -106,10 +120,15 @@
                 <div id="selectall" class="block-wrapper">
                     <h2>Select all records</h2>
                     <div class="block-description">
-                        Се селектираат сите записи од табелите.
+                        In the diagram below we are comparing similar methods for
+                        selecting all records from database table.
                     </div>
                     <div class="block-chart">
                         <div id="chart1-all"></div>
+                    </div>
+                    <div class="block-description">
+                        Diagram above shows us that for selecting all records from table
+                        Zend is always fastest, no mather how many records we have in our table.
                     </div>
                 </div>
                 
