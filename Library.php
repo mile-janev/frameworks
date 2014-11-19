@@ -13,9 +13,8 @@
  */
 class Library {
     /*Prepare results for displaying in chart*/
-    public function formatArray($statistic)
+    public function formatArray($results)
     {
-        $results = $this->cleanResults($statistic);
         $formatedArray = array();
         $small = 0;
         $medium = 0;
@@ -40,20 +39,9 @@ class Library {
         return $formatedArray;
     }
     
-    //This function remove 5% of highest and 5% of lowest results for each database type (small/medium/large)
-    //Means that 70% of the tests will be accepted.
-    //
-    //Ova se pravi bidejki tie 30% se ne tolku realni poradi faktot sto procesorot vo
-    //toj moment mozel da bide zafaten pa pokazal pomal broj na zapisi ili drug nekoj faktor.
-    public function cleanResults($results)
-    {
-        
-        return $results;
-    }
-    
     public function findStatistic($framework, $function)
     {
-        if (strpos($_SERVER['DOCUMENT_ROOT'],'wamp')) {
+        if (strpos($_SERVER['DOCUMENT_ROOT'], 'wamp')) {
             $password = "";
         } else {
             $password = "toor";

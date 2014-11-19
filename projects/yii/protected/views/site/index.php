@@ -1,78 +1,83 @@
 <div class="block-wrapper">
-    <h1>Опис на методите</h1>
+    <h2>Methods description:</h2>
+    <h5>
+        <p>All methods who start with word 'find' return one result from database, or null if results are not found.</p>
+        <p>All methods who start with word 'findAll' return array of results, or empty array if results are not found.</p>
+        <p>Every 'find' method has corresponding 'findAll' method.</p>
+        <p>Every single result is an object who contains attributes with corresponding columns from database table.</p>
+    </h5>
     <div class="block-description">
-        <p>Опис на методите:</p>
         <ul>
             <li>
                 <strong>find()</strong>
                 -
                 <span>
-                    Еден запис со користење на find() методот. 
-                    Прима објект од класата CDbCriteria како параметар.
+                    Receiving an object from class CDbCriteria as parameter 
+                    and return one record (row from database/object) as result.
                 </span>
             </li>
             <li>
                 <strong>findByPk()</strong>
                 -
                 <span>
-                    Еден запис со користење на findByPk() методот.
-                    findByPk() прима цел број (примарен клуч) како параметар.
+                    Receiving integer (primary key for table) as parameter
+                    and return object as result.
                 </span>
             </li>
             <li>
                 <strong>findByAttributes()</strong>
                 -
                 <span>
-                    Еден запис со користење на findByAttributes() методот.
-                    findByAttributes() како параметар прима низа во која key е атрибутот а value е условот.
+                    Receiving an array in format key=>value as parameter,
+                    where 'key' is column in database table and 'value' is our condition.
+                    Return object as result.
                 </span>
             </li>
             <li>
                 <strong>findBySql()</strong>
                 -
                 <span>
-                    Еден запис со користење на findBySql() методот.
-                    Прима два параметри: првиот е query каде наместо услов се става некој стринг,
-                    а вториот е низа во која на стринговите од query-то и се доделуваат вредности.
-                    Пример, findBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>5))
+                    Can receive one or two parameters:
+                    First is custom defined query where all condition values will be replaced with some strings,
+                    and second is an array of strings from first parameter and values.
+                    Return object as result.
+                    <i>Example: findBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>5))</i>
                 </span>
             </li>
             <li>
                 <strong>findAll()</strong>
                 -
                 <span>
-                    Повеќе записи со користење на findAll() методот.
-                    Доколку не прима параметар ги враќа сите записи од табелата.
-                    Прима параметар објект од класата CDbCriteria().                        
+                    Receiving an object from class CDbCriteria as parameter 
+                    and returns an array of records who are matching this criteria.
+                    If parameter is not bounded, all records from database table will be returned.
                 </span>
             </li>
             <li>
                 <strong>findAllByPk()</strong>
                 -
                 <span>
-                    Повеќе записи со користење на findAllByPk() методот.
-                    Прима низа од цели броеви (примарни клучеви) како параметар
-                    и во низа ги враќа соодветните редови од табелата.
+                    Receiving an array of integers (primary keys) as parameter
+                    and returns an array of records who are matching this criteria.
                 </span>
             </li>
             <li>
                 <strong>findAllByAttributes()</strong>
                 -
                 <span>
-                    Повеќе записи со користење на findAllByAttributes() методот.
-                    Прима низа во која key е атрибутот а value е условот,
-                    а како резултат враќа низа од редови од табелата кои го исполнуваат условот.
+                    Receiving an array in format key=>value, where 'key' is a column in database
+                    and 'value' is our condition. Returns an array of records who are matching this criteria.
                 </span>
             </li>
             <li>
                 <strong>findAllBySql()</strong>
                 -
                 <span>
-                    Повеќе записи со користење на findAllBySql() методот.
-                    Прима два параметри: првиот е query каде наместо услов се става некој стринг,
-                    а вториот е низа во која на стринговите од query-то и се доделуваат вредности.
-                    Пример, findBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>5))
-                    Враќа низа од редови од табелата кои го исполниле условот.
+                    Can receive one or two parameters:
+                    First is custom defined query where all condition values will be replaced with some strings,
+                    and second is an array of strings from first parameter and values.
+                    Returns an array of records who are matching this criteria.
+                    <i>Example: findAllBySql("SELECT * FROM s_post WHERE id < :id", array(":id"=>5))</i>
                 </span>
             </li>
         </ul>
@@ -128,7 +133,7 @@
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300
         };
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart1-yii'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart1-yii'));
         chart.draw(data, options);
     }
 </script>

@@ -88,32 +88,37 @@ h1{
     font-size: 30px;
     margin-top: 10px;
     margin-bottom: 20px;
-    text-transform: uppercase;
+    font-weight: bold;
 }
 h2{
     font-size: 24px; 
     margin-top: 9px;
     margin-bottom: 18px;
+    font-weight: bold;
 }
 h3{
     font-size: 18px;
     margin-top: 8px;
     margin-bottom: 16px;
+    font-weight: bold;
 }
 h4{
     font-size: 16px;
     margin-top: 7px;
     margin-bottom: 14px;
+    font-weight: bold;
 }
 h5{
     font-size: 14px;
     margin-top: 6px;
     margin-bottom: 12px;
+    font-weight: bold;
 }
 h6{
     font-size: 12px;
     margin-top: 5px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 a{
     color: #ea3309;
@@ -154,7 +159,7 @@ strong, b{
 #mainMenu{
     margin: 0 auto;
     padding: 0;
-    width: 480px;
+    width: 350px;
 }
 #mainMenu > li{
     list-style-type: none;
@@ -265,10 +270,17 @@ strong, b{
 }
 .block-description ul li{
     list-style-type: disc;
+    padding: 5px 0;
 }
 .block-description ul li strong{
     
 }
 .block-description ul li span{
     
+}
+
+@media (max-width: 900px) {
+  #titleSite {
+    display: none;
+  }
 }
