@@ -27,11 +27,87 @@ and open the template in the editor.
             <h1>Функции</h1>
             
             <h3>Yii</h3>
+            <h4>
+                Методите кои започнуваат со find враќаат еден резултат, а оние со findAll враќаат низа од резултати.
+                Секој резултат е објект кој содржи параметри со соодветните колони од табелата.
+            </h4>
             <ol>
                 <li>
-                    <b></b>
+                    <b>Select All - findAll()</b>
                     -
-                    <span></span>
+                    <span>Сите записи од табелата. findAll() не прима параметри.</span>
+                </li>
+                <li>
+                    <b>actionFind() - find()</b>
+                    -
+                    <span>
+                        Еден запис со користење на find() методот. 
+                        Прима објект од класата CDbCriteria како параметар.
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindbypk() - findByPk()</b>
+                    -
+                    <span>
+                        Еден запис со користење на findByPk() методот.
+                        findByPk() прима цел број (примарен клуч) како параметар.
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindbyattributes() - findByAttributes()</b>
+                    -
+                    <span>
+                        Еден запис со користење на findByAttributes() методот.
+                        findByAttributes() како параметар прима низа во која key е атрибутот а value е условот.
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindbysql() - findBySql()</b>
+                    -
+                    <span>
+                        Еден запис со користење на findBySql() методот.
+                        Прима два параметри: првиот е query каде наместо услов се става некој стринг,
+                        а вториот е низа во која на стринговите од query-то и се доделуваат вредности.
+                        Пример, findBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>5))
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindall() - findAll()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на findAll() методот.
+                        Доколку не прима параметар ги враќа сите записи од табелата.
+                        Прима параметар објект од класата CDbCriteria().                        
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindallbypk() - findAllByPk()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на findAllByPk() методот.
+                        Прима низа од цели броеви (примарни клучеви) како параметар
+                        и во низа ги враќа соодветните редови од табелата.
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindallbyattributes() - findAllByAttributes()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на findAllByAttributes() методот.
+                        Прима низа во која key е атрибутот а value е условот,
+                        а како резултат враќа низа од редови од табелата кои го исполнуваат условот.
+                    </span>
+                </li>
+                <li>
+                    <b>actionFindallbysql() - findAllBySql()</b>
+                    -
+                    <span>
+                        Повеќе записи со користење на findAllBySql() методот.
+                        Прима два параметри: првиот е query каде наместо услов се става некој стринг,
+                        а вториот е низа во која на стринговите од query-то и се доделуваат вредности.
+                        Пример, findBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>5))
+                        Враќа низа од редови од табелата кои го исполниле условот.
+                    </span>
                 </li>
             </ol>
             
