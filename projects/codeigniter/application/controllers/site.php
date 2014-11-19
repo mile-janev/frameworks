@@ -70,7 +70,9 @@ class Site extends CI_Controller
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
+            $bla = $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
+            var_dump($bla);
+            exit();
             $this->i++;
             $this->s++;
         }
@@ -160,7 +162,7 @@ class Site extends CI_Controller
             $this->l++;
         }
         
-        $this->saveTest("selectall");//get()
+        $this->saveTest("selectall");
                 
         $this->load->view('site/result', array(
             'act' => 'Select all',
