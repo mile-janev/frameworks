@@ -102,17 +102,31 @@
                             is faster in select operations.
                         </p>
                         <p>
-                            <b>
+                            <strong>
                                 Comparing similar methods in different frameworks allows us to determine
                                 which framework is faster.
-                            </b>
+                            </strong>
                         </p>
                         <p>
-                            <b>
+                            <strong>
                                 Comparing three different table sizes will allows us to discover
                                 how they will behave with increasing number of data.
                                 This is very important question for choosing right framework for new project.
-                            </b>
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                All tests are maked on local machine using LAMP server, Linux Ubuntu distribution.
+                                Software and hardware specifications are:
+                                <ul>
+                                    <li>Processor: Intel Core i5-2430M (2 Cores, 4 Threads, 2.4GHz)</li>
+                                    <li>RAM memory: 6GB</li>
+                                    <li>Operating System: Linux Ubuntu 12.04 LTS, 32-bit</li>
+                                    <li>Apache version: 2.2.22</li>
+                                    <li>MySQL version: 5.6.21</li>
+                                    <li>PHP version: 5.3.10</li>
+                                </ul>
+                            </strong>
                         </p>
                     </div>
                 </div>

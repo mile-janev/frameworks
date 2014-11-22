@@ -57,6 +57,7 @@ body {
 }
 ol, ul {
     list-style: none;
+    margin-left: 30px;
 }
 table {/* tables still need 'cellspacing="0"' in the markup */
     border-collapse: separate;
