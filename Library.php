@@ -35,6 +35,7 @@ class Library {
         $formatedArray['small'] = round($small*$interval);
         $formatedArray['medium'] = round($medium*$interval);
         $formatedArray['large'] = round($large*$interval);
+        $formatedArray['average'] = round(($formatedArray['small']+$formatedArray['medium']+$formatedArray['large'])/3);
         
         return $formatedArray;
     }

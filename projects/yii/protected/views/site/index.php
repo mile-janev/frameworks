@@ -119,6 +119,9 @@
                 If we need to search by attribute, than the first option needs to be findByAttributes().
             </p>
         </div>
+        <div class="block-chart">
+            <div id="chart2-yii"></div>
+        </div>
     </div>
     
     <div class="block-wrapper-inner">
@@ -130,6 +133,9 @@
                 findByAttributes().
             </p>
         </div>
+        <div class="block-chart">
+            <div id="chart3-yii"></div>
+        </div>
     </div>
     
 </div>
@@ -137,9 +143,11 @@
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
     
-    google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart1);
+    google.setOnLoadCallback(drawChart2);
+    google.setOnLoadCallback(drawChart3);
     
-    function drawChart() {
+    function drawChart1() {
         var data = google.visualization.arrayToDataTable([
             [
                 'Database Type',
@@ -168,6 +176,46 @@
             height: 300
         };
         var chart = new google.visualization.LineChart(document.getElementById('chart1-yii'));
+        chart.draw(data, options);
+    }
+    
+    function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+            ['Method', 'Small', 'Medium', 'Large', 'Average'],
+            ['find()', <?php echo $find_Yii['small']; ?>, <?php echo $find_Yii['medium']; ?>, <?php echo $find_Yii['large']; ?>, <?php echo $find_Yii['average']; ?>],
+            ['findByPk()', <?php echo $findByPk_Yii['small']; ?>, <?php echo $findByPk_Yii['medium']; ?>, <?php echo $findByPk_Yii['large']; ?>, <?php echo $findByPk_Yii['average']; ?>],
+            ['findByAttributes()', <?php echo $findByAttributes_Yii['small']; ?>, <?php echo $findByAttributes_Yii['medium']; ?>, <?php echo $findByAttributes_Yii['large']; ?>, <?php echo $findByAttributes_Yii['average']; ?>],
+            ['findBySql()', <?php echo $findBySql_Yii['small']; ?>, <?php echo $findBySql_Yii['medium']; ?>, <?php echo $findBySql_Yii['large']; ?>, <?php echo $findBySql_Yii['average']; ?>]
+        ]);
+        var options = {
+            title: 'findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
+            height: 300,
+            vAxis: {title: 'Executions per second'},
+            hAxis: {title: "Method"},
+            seriesType: "bars",
+            series: {3: {type: "line"}}
+        };
+        var chart = new google.visualization.ComboChart(document.getElementById('chart2-yii'));
+        chart.draw(data, options);
+    }
+    
+    function drawChart3() {
+        var data = google.visualization.arrayToDataTable([
+            ['Method', 'Small', 'Medium', 'Large', 'Average'],
+            ['findAll()', <?php echo $findAll_Yii['small']; ?>, <?php echo $findAll_Yii['medium']; ?>, <?php echo $findAll_Yii['large']; ?>, <?php echo $findAll_Yii['average']; ?>],
+            ['findAllByPk()', <?php echo $findAllByPk_Yii['small']; ?>, <?php echo $findAllByPk_Yii['medium']; ?>, <?php echo $findAllByPk_Yii['large']; ?>, <?php echo $findAllByPk_Yii['average']; ?>],
+            ['findAllByAttributes()', <?php echo $findAllByAttributes_Yii['small']; ?>, <?php echo $findAllByAttributes_Yii['medium']; ?>, <?php echo $findAllByAttributes_Yii['large']; ?>, <?php echo $findAllByAttributes_Yii['average']; ?>],
+            ['findAllBySql()', <?php echo $findAllBySql_Yii['small']; ?>, <?php echo $findAllBySql_Yii['medium']; ?>, <?php echo $findAllBySql_Yii['large']; ?>, <?php echo $findAllBySql_Yii['average']; ?>]
+        ]);
+        var options = {
+            title: 'findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
+            height: 300,
+            vAxis: {title: 'Executions per second'},
+            hAxis: {title: "Method"},
+            seriesType: "bars",
+            series: {3: {type: "line"}}
+        };
+        var chart = new google.visualization.ComboChart(document.getElementById('chart3-yii'));
         chart.draw(data, options);
     }
 </script>
