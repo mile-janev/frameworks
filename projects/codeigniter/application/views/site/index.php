@@ -15,13 +15,13 @@
 
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'query()', 'get()', 'get_where()'],
-                    ['Small', <?php echo $query_ci['small']; ?>, <?php echo $get_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
-                    ['Medium', <?php echo $query_ci['medium']; ?>, <?php echo $get_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
-                    ['Large', <?php echo $query_ci['large']; ?>, <?php echo $get_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
+                    ['Database Type', 'get_where()', 'get()', 'query()'],
+                    ['Small', <?php echo $get_where_ci['small']; ?>, <?php echo $get_ci['small']; ?>, <?php echo $query_ci['small']; ?>],
+                    ['Medium', <?php echo $get_where_ci['medium']; ?>, <?php echo $get_ci['medium']; ?>, <?php echo $query_ci['medium']; ?>],
+                    ['Large', <?php echo $get_where_ci['large']; ?>, <?php echo $get_ci['large']; ?>, <?php echo $query_ci['large']; ?>]
                 ]);
                 var options = {
-                    title: 'query(), get() & get_where() in Codeigniter',
+                    title: 'get_where(), get() & query() in Codeigniter',
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                     height: 300
                 };
@@ -87,15 +87,31 @@
                     <h2>Different methods for same purpose</h2>
                     <div class="block-description">
                         <p>
-                            Somethimes we have cases where multiple methods can be used for same purpose.
+                            Somethimes we have cases where multiple methods can be used for same purpose. 
                         </p>
+                    </div>
+                    
+                    <div class="block-wrapper-inner">
+                        <h3>Fastest method</h3>
+                        <div class="block-description">
+                            <p>
+                                Chart above shows us that fastest method
+                                for selecting data in Codeigniter is query() method.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="block-wrapper-inner">
-                        <h3>query(), get() & get_where()</h3>
+                        <h3>get() & query()</h3>
                         <div class="block-description">
                             <p>
-                                Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.
+                                If we need to build complicated select query, we can use get() or query() functions.
+                                As we can see from the diagram above, using query() is much faster than using get() method.
+                            </p>
+                            <p>
+                                But, Codeigniter programmers preffer using get() method before query().
+                                Main reason is because get() allows query to be written partially (dynamically),
+                                not just as string which is case for query() method.
                             </p>
                         </div>
                     </div>

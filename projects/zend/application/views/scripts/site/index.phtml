@@ -51,19 +51,44 @@
 
 <div id="find-fetchRow" class="block-wrapper">
     
-    <h2>Different methods for same purpose</h2>
-    <div class="block-description">
-        <p>
-            Somethimes we have cases where multiple methods can be used for same purpose.
-        </p>
+    <div class="block-wrapper-inner">
+        <h2>Different methods for same purpose</h2>
+        <div class="block-description">
+            <p>
+                Somethimes we have cases where multiple methods can be used for same purpose.
+            </p>
+        </div>
     </div>
     
     <div class="block-wrapper-inner">
-        <h3>find() & fetchRow()</h3>
+        <h3>Fastest method</h3>
         <div class="block-description">
             <p>
-                Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-                да го користиме методот find() одколку fetchRow() бидејки е многу побрз.
+                Chart above shows us that fastest method
+                for selecting data in Zend is fetchAll() method.
+            </p>
+        </div>
+    </div>
+    
+    <div class="block-wrapper-inner">
+        <h3>Selecting one record (find() & fetchRow())</h3>
+        <div class="block-description">
+            <p>
+                These two methods return one result from database. If we have case when we need to select
+                row when we have the primary key, we can use any of these methods. But, find() method is much more
+                specific, than select only by primary key. This makes him faster than fetchRow();
+            </p>
+        </div>
+    </div>
+    
+    <div class="block-wrapper-inner">
+        <h3>Selecting multiple records (findAll() & Zend_Db_Select)</h3>
+        <div class="block-description">
+            <p>
+                These two methods will return us all result from database which will satisfy the query.
+                As we can see from diagram, findAll() method is much faster than using Zend_Db_Select.
+                Advantage of Zend_Db_Select is writing partial queries, which is much easier for building
+                dynamic query.
             </p>
         </div>
     </div>

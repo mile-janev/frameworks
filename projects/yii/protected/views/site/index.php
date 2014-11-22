@@ -90,19 +90,44 @@
 
 <div class="block-wrapper">
     
-    <h2>Different methods for same purpose</h2>
-    <div class="block-description">
-        <p>
-            Somethimes we have cases where multiple methods can be used for same purpose.
-        </p>
+    <div class="block-wrapper-inner">
+        <h2>Different methods for same purpose</h2>
+        <div class="block-description">
+            <p>
+                Somethimes we have cases where multiple methods can be used for same purpose.
+            </p>
+        </div>
     </div>
     
     <div class="block-wrapper-inner">
-        <h3>findByPk() & find()</h3>
+        <h3>Fastest method</h3>
         <div class="block-description">
             <p>
-                Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-                да го користиме методот findByPk() одколку find() бидејки е многу побрз.
+                Chart above shows us that fastest method
+                for selecting data in Zend is fetchAll() method.
+            </p>
+        </div>
+    </div>
+    
+    <div class="block-wrapper-inner">
+        <h3>Selecting one record (find(), findByPk(), findByAttributes(), findBySql())</h3>
+        <div class="block-description">
+            <p>
+                All of these methods will return one record from database. 
+                A bit different is findByPk() method who search only by primary key.
+                From comparing these methods we can conclude that findByPk() is fastest.
+                If we need to search by attribute, than the first option needs to be findByAttributes().
+            </p>
+        </div>
+    </div>
+    
+    <div class="block-wrapper-inner">
+        <h3>Selecting multiple records (findAll(), findAllByPk(), findAllByAttributes(), findAllBySql())</h3>
+        <div class="block-description">
+            <p>
+                All of these methods return us all result from database which will satisfy the query.
+                First option (after findAllByPk()) needs to be findByAttributes(), a parallel method of 
+                findByAttributes().
             </p>
         </div>
     </div>

@@ -250,6 +250,7 @@ strong, b{
 #page{
     margin: 0 auto;
     max-width: 960px;
+    padding: 0 20px;
 }
 
 .block-wrapper{
