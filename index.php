@@ -115,18 +115,16 @@
                             </strong>
                         </p>
                         <p>
-                            <strong>
-                                All tests are maked on local machine using LAMP server, Linux Ubuntu distribution.
-                                Software and hardware specifications are:
-                                <ul>
-                                    <li>Processor: Intel Core i5-2430M (2 Cores, 4 Threads, 2.4GHz)</li>
-                                    <li>RAM memory: 6GB</li>
-                                    <li>Operating System: Linux Ubuntu 12.04 LTS, 32-bit</li>
-                                    <li>Apache version: 2.2.22</li>
-                                    <li>MySQL version: 5.6.21</li>
-                                    <li>PHP version: 5.3.10</li>
-                                </ul>
-                            </strong>
+                            All tests are maked on local machine using LAMP server, Linux Ubuntu distribution.
+                            Software and hardware specifications are:
+                            <ul>
+                                <li>Processor: Intel Core i5-2430M (2 Cores, 4 Threads, 2.4GHz)</li>
+                                <li>RAM memory: 6GB</li>
+                                <li>Operating System: Linux Ubuntu 12.04 LTS, 32-bit</li>
+                                <li>Apache version: 2.2.22</li>
+                                <li>MySQL version: 5.6.21</li>
+                                <li>PHP version: 5.3.10</li>
+                            </ul>
                         </p>
                     </div>
                 </div>
