@@ -52,9 +52,9 @@
             function drawChart3() {
                 var data = google.visualization.arrayToDataTable([
                     ['Database Type', 'Yii', 'Zend', 'Codeigniter'],
-                    ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $fetchRow_Zend['small']; ?>, <?php echo $get_where_CI['small']; ?>],
-                    ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $fetchRow_Zend['medium']; ?>, <?php echo $get_where_CI['medium']; ?>],
-                    ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $fetchRow_Zend['large']; ?>, <?php echo $get_where_CI['large']; ?>]
+                    ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $fetchRow_Zend['small']; ?>, <?php echo $get['small']; ?>],
+                    ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $fetchRow_Zend['medium']; ?>, <?php echo $get['medium']; ?>],
+                    ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $fetchRow_Zend['large']; ?>, <?php echo $get['large']; ?>]
                 ]);
                 var options = {
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
