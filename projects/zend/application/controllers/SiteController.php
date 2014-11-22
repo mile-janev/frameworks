@@ -201,15 +201,15 @@ class SiteController extends Zend_Controller_Action
         $this->render('result');
     }
     
-    /*Test method fetch(). Only on query object (custom query). Same as fetchRow()*/
-    public function fetchAction()
+    /*Using class Zend_Db_Select*/
+    public function zenddbselectAction()
     {
         $select1 = new Zend_Db_Select($this->db);
         $select1 = $this->db->select()->from('s_post');
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $select1->where('id = ?', $this->i);
-            $select1->query()->fetch();
+            $select1->query();//$results = $select1->query()->fetchAll()
             $this->i++;
             $this->s++;
         }
@@ -220,7 +220,7 @@ class SiteController extends Zend_Controller_Action
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
             $select2->where('id = ?', $this->i);
-            $select2->query()->fetch();
+            $select2->query();
             $this->i++;
             $this->m++;
         }
@@ -231,15 +231,15 @@ class SiteController extends Zend_Controller_Action
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
             $select3->where('id = ?', $this->i);
-            $select3->query()->fetch();
+            $select3->query();
             $this->i++;
             $this->l++;
         }
         $this->i = 1;
         
-        $this->saveTest("fetch()");
+        $this->saveTest("Zend_Db_Select");
         
-        $this->view->assign('act', 'fetch()');
+        $this->view->assign('act', 'Zend_Db_Select');
         $this->view->assign('small', $this->s);
         $this->view->assign('medium', $this->m);
         $this->view->assign('large', $this->l);
@@ -251,14 +251,15 @@ class SiteController extends Zend_Controller_Action
         include_once $_SERVER['DOCUMENT_ROOT'].'/Library.php';
         $object = new Library();
         
-        /*find()*/
         $find_zend = $object->findStatistic('zend', 'find()');
-        
-        /*fetchRow()*/
         $fetchRow_zend = $object->findStatistic('zend', 'fetchRow()');
+        $dbselect_zend = $object->findStatistic('zend', 'Zend_Db_Select');
+        $fetchAll_zend = $object->findStatistic('zend', 'fetchAll()');
         
         $this->view->assign('find_zend', $find_zend);
-        $this->view->assign('fetchRow_zend', $fetchRow_zend);        
+        $this->view->assign('fetchRow_zend', $fetchRow_zend);
+        $this->view->assign('dbselect_zend', $dbselect_zend);   
+        $this->view->assign('fetchAll_zend', $fetchAll_zend);   
     }
 }
 

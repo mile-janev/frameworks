@@ -1,36 +1,73 @@
 <div class="block-wrapper">
-    <h1>Опис на методите</h1>
+    <h2>Methods description:</h2>
     <div class="block-description">
-        <p>Опис на методите:</p>
         <ul>
             <li>
                 <strong>find()</strong>
                 - 
-                <span>Прима цел број (примарен клуч) како параметар а како резултат враќа еден ред од база.</span>
+                <span>
+                    Receiving integer (primary key for table) or array of integers as parameter.
+                    Return an object of class Zend_Db_Table_Rowset.
+                    Object with empty data is returned if record is not founded.
+                </span>
             </li>
             <li>
                 <strong>fetchRow()</strong>
                 - 
-                <span>Прима атрибут како параметар а како резултат враќа еден ред од база.</span>
+                <span>
+                    Receiving a string like query condition (example: "id=".$id).
+                    Return an object from class Zend_Db_Table_Row if record is found,
+                    or null if record is not founded.
+                </span>
             </li>
+            <li>
+                <strong>fetchAll()</strong>
+                - 
+                <span>
+                    Receiving a string like query condition (example: "id=".$id).
+                    Return an object from class Zend_Db_Table_Rowset.
+                    Object with empty data is returned if record is not founded.
+                </span>
+            </li>
+            <li>
+                <strong>Zend_Db_Select</strong>
+                - 
+                <span>
+                    The Zend_Db_Select object represents a SQL SELECT query statement.
+                    The class has methods for adding individual parts to the query.
+                    Using this way of selecting records requires using of fetch() or fetchAll()
+                    on this object, so all records will be fetched into array or array of arrays.
+                </span>
+            </li>            
         </ul>
     </div>
+</div>
+
+<div class="block-wrapper">
     <div class="block-chart">
         <div id="chart1-zend"></div>
     </div>
 </div>
 
 <div id="find-fetchRow" class="block-wrapper">
-    <h2>find() & fetchRow()</h2>
+    
+    <h2>Different methods for same purpose</h2>
     <div class="block-description">
-        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел 
-            (Пример, сакаме да извадеме ред од база кога го имаме примарниот клуч).</p>
-        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-            да го користиме методот find() одколку fetchRow() бидејки е многу побрз.</p>
+        <p>
+            Somethimes we have cases where multiple methods can be used for same purpose.
+        </p>
     </div>
-    <div class="block-chart">
-        <div id="chart1-zend"></div>
+    
+    <div class="block-wrapper-inner">
+        <h3>find() & fetchRow()</h3>
+        <div class="block-description">
+            <p>
+                Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
+                да го користиме методот find() одколку fetchRow() бидејки е многу побрз.
+            </p>
+        </div>
     </div>
+    
 </div>
 
 <script type="text/javascript">
@@ -40,14 +77,15 @@
     
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Database Type', 'find()', 'fetchRow()'],
-            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>],
-            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>],
-            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>]
+            ['Database Type', 'find()', 'fetchRow()', 'fetchAll()', 'Zend_Db_Select'],
+            ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->fetchAll_zend['small']; ?>, <?php echo $this->dbselect_zend['small']; ?>],
+            ['Medium', <?php echo $this->find_zend['medium']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>, <?php echo $this->fetchAll_zend['medium']; ?>, <?php echo $this->dbselect_zend['medium']; ?>],
+            ['Large', <?php echo $this->find_zend['large']; ?>, <?php echo $this->fetchRow_zend['large']; ?>, <?php echo $this->fetchAll_zend['large']; ?>, <?php echo $this->dbselect_zend['large']; ?>]
         ]);
         var options = {
-            title: 'find() & fetchRow() in Zend',
-            hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
+            title: 'find(), fetchRow(), fetchAll(), Zend_Db_Select in Zend',
+            hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+            height: 300
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart1-zend'));
         chart.draw(data, options);

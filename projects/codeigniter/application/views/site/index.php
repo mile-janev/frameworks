@@ -15,14 +15,15 @@
 
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'query()', 'get_where()'],
-                    ['Small', <?php echo $query_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
-                    ['Medium', <?php echo $query_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
-                    ['Large', <?php echo $query_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
+                    ['Database Type', 'query()', 'get()', 'get_where()'],
+                    ['Small', <?php echo $query_ci['small']; ?>, <?php echo $get_ci['small']; ?>, <?php echo $get_where_ci['small']; ?>],
+                    ['Medium', <?php echo $query_ci['medium']; ?>, <?php echo $get_ci['medium']; ?>, <?php echo $get_where_ci['medium']; ?>],
+                    ['Large', <?php echo $query_ci['large']; ?>, <?php echo $get_ci['large']; ?>, <?php echo $get_where_ci['large']; ?>]
                 ]);
                 var options = {
-                    title: 'query() & get_where() in Codeigniter',
-                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}}
+                    title: 'query(), get() & get_where() in Codeigniter',
+                    hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+                    height: 300
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
                 chart.draw(data, options);
@@ -39,34 +40,66 @@
             <div class="container" id="page">
                 
                 <div class="block-wrapper">
-                    <h1>Опис на методите</h1>
+                    <h2>Methods description:</h2>
+                    <h5>
+                        All methods return object of class CI_DB_mysql_result.
+                        Requires using of row() or result() on this object, so all records
+                        will be fetched into stdClass object or array of objects from stdClass.
+                    </h5>
                     <div class="block-description">
-                        <p>Опис на методите:</p>
                         <ul>
-                            <li>
-                                <strong>query()</strong>
-                                - 
-                                <span>Селектираме само еден ред според custom query.</span>
-                            </li>
                             <li>
                                 <strong>get_where()</strong>
                                 - 
-                                <span>Селектираме еден ред според методот get_where кој е дел од Active Record класата.</span>
+                                <span>
+                                    Receiving four parameters:
+                                    First is table name (string),
+                                    second is condition (array of key=>value, where 'key' is table column and 'value' is our condition),
+                                    third is limit and fourth is offset. Third and fourth parameters are not mandatory.
+                                </span>
+                            </li>
+                            <li>
+                                <strong>get()</strong>
+                                - 
+                                <span>
+                                    Custom partial query.
+                                </span>
+                            </li>
+                            <li>
+                                <strong>query()</strong>
+                                - 
+                                <span>
+                                    Custom query prepared for direct executing in database.
+                                </span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div id="query-get_where" class="block-wrapper">
-                    <h2>query() & get_where()</h2>
-                    <div class="block-description">
-                        <p>Постојат случаеви во кои и двата метода можеме да ги користеме за иста цел.</p>
-                        <p>Од извршените тестови можеме да заклучиме дека во овие случаеви подобро е
-                            да користиме query() одколку get_where() методот бидејки е многу побрзо.</p>
-                    </div>
+                <div class="block-wrapper">
                     <div class="block-chart">
                         <div id="chart1-codeigniter"></div>
                     </div>
+                </div>
+                
+                <div id="query-get_where" class="block-wrapper">
+                    
+                    <h2>Different methods for same purpose</h2>
+                    <div class="block-description">
+                        <p>
+                            Somethimes we have cases where multiple methods can be used for same purpose.
+                        </p>
+                    </div>
+
+                    <div class="block-wrapper-inner">
+                        <h3>query(), get() & get_where()</h3>
+                        <div class="block-description">
+                            <p>
+                                Од извршените тестови можеме да заклучиме дека во овие случаеви најбрз е query() методот.
+                            </p>
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>
