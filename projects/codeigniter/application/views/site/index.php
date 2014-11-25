@@ -11,6 +11,10 @@
         <script type="text/javascript">
             google.load("visualization", "1", {packages:["corechart"]});
 
+            jQuery(window).resize(function(){
+                drawChart();
+            });
+
             google.setOnLoadCallback(drawChart);
 
             function drawChart() {
@@ -22,6 +26,7 @@
                 ]);
                 var options = {
                     title: 'get_where(), get() & query() in Codeigniter',
+                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                     height: 300
                 };

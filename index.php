@@ -14,6 +14,12 @@
         <script type="text/javascript">
             google.load("visualization", "1", {packages:["corechart"]});
             
+            jQuery(window).resize(function(){
+                drawChart1();
+                drawChart2();
+                drawChart3();
+            });
+            
             google.setOnLoadCallback(drawChart1);
             google.setOnLoadCallback(drawChart2);
             google.setOnLoadCallback(drawChart3);
@@ -27,7 +33,8 @@
                 ]);
                 var options = {
                     title: 'Select all records from table',
-                    hAxis: {titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+                    hAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
                     height:300
                 };
                 var chart = new google.visualization.BarChart(document.getElementById('chart1-all'));
@@ -43,6 +50,7 @@
                 ]);
                 var options = {
                     title: 'Comparation between findAll(Yii), fetchAll(zend), get_where(codeigniter)',
+                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.LineChart(document.getElementById('chart2-all'));
@@ -58,6 +66,7 @@
                 ]);
                 var options = {
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
+                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart3-all'));

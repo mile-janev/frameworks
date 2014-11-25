@@ -98,6 +98,10 @@
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
     
+    jQuery(window).resize(function(){
+        drawChart();
+    });
+    
     google.setOnLoadCallback(drawChart);
     
     function drawChart() {
@@ -109,6 +113,7 @@
         ]);
         var options = {
             title: 'find(), fetchRow(), fetchAll(), Zend_Db_Select in Zend',
+            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300
         };

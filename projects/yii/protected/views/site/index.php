@@ -143,6 +143,12 @@
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
     
+    jQuery(window).resize(function(){
+        drawChart1();
+        drawChart2();
+        drawChart3();
+    });
+    
     google.setOnLoadCallback(drawChart1);
     google.setOnLoadCallback(drawChart2);
     google.setOnLoadCallback(drawChart3);
@@ -172,6 +178,7 @@
         ]);
         var options = {
             title: 'find(), findByPk(), findByAttributes(), findBySql(), findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
+            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300
         };
@@ -190,8 +197,8 @@
         var options = {
             title: 'findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
             height: 300,
-            vAxis: {title: 'Executions per second'},
-            hAxis: {title: "Method"},
+            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+            hAxis: {title: 'Method', titleTextStyle: {color: 'red'}},
             seriesType: "bars",
             series: {3: {type: "line"}}
         };
@@ -210,8 +217,8 @@
         var options = {
             title: 'findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
             height: 300,
-            vAxis: {title: 'Executions per second'},
-            hAxis: {title: "Method"},
+            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+            hAxis: {title: 'Method', titleTextStyle: {color: 'red'}},
             seriesType: "bars",
             series: {3: {type: "line"}}
         };
