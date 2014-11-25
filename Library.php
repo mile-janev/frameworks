@@ -52,7 +52,11 @@ class Library {
         $db = @mysql_connect("localhost", "root", $password) or die("Could not connect database");
         mysql_select_db($mysql_database, $db) or die("Could not select database");
         
-        $query = "SELECT * FROM statistic WHERE framework = '$framework' AND function = '$function'";
+        if ($function == 'all') {
+            $query = "SELECT * FROM statistic WHERE framework = '$framework'";
+        } else {
+            $query = "SELECT * FROM statistic WHERE framework = '$framework' AND function = '$function'";
+        }
         $result = mysql_query($query);
         
         $resultArray = array();

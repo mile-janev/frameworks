@@ -15,14 +15,56 @@
             google.load("visualization", "1", {packages:["corechart"]});
             
             jQuery(window).resize(function(){
+                drawChart0();
                 drawChart1();
                 drawChart2();
                 drawChart3();
+                drawChart4();
             });
             
+            google.setOnLoadCallback(drawChart0);
             google.setOnLoadCallback(drawChart1);
             google.setOnLoadCallback(drawChart2);
             google.setOnLoadCallback(drawChart3);
+            google.setOnLoadCallback(drawChart4);
+            
+            function drawChart0() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Method', 'Small', 'Medium', 'Large', 'Average'],
+                    ['Yii', <?php echo $all_Yii['small']; ?>, <?php echo $all_Yii['medium']; ?>, <?php echo $all_Yii['large']; ?>, <?php echo $all_Yii['average']; ?>],
+                    ['Zend', <?php echo $all_Zend['small']; ?>, <?php echo $all_Zend['medium']; ?>, <?php echo $all_Zend['large']; ?>, <?php echo $all_Zend['average']; ?>],
+                    ['Codeigniter', <?php echo $all_CI['small']; ?>, <?php echo $all_CI['medium']; ?>, <?php echo $all_CI['large']; ?>, <?php echo $all_CI['average']; ?>]
+                ]);
+                var options = {
+                    title: 'All methods in Yii, Zend and Codeigniter compared with different table sizes',
+                    height: 300,
+                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    hAxis: {title: 'Framework Methods', titleTextStyle: {color: 'red'}},
+                    seriesType: "bars",
+                    series: {3: {type: "line"}}
+                };
+                var chart = new google.visualization.ComboChart(document.getElementById('chart0-all'));
+                chart.draw(data, options);
+            }
+            
+            function drawChart4() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Method', 'Small', 'Medium', 'Large', 'Average'],
+                    ['Yii', <?php echo $all_Yii['small']; ?>, <?php echo $all_Yii['medium']; ?>, <?php echo $all_Yii['large']; ?>, <?php echo $all_Yii['average']; ?>],
+                    ['Zend', <?php echo $all_Zend['small']; ?>, <?php echo $all_Zend['medium']; ?>, <?php echo $all_Zend['large']; ?>, <?php echo $all_Zend['average']; ?>],
+                    ['Codeigniter', <?php echo $all_CI['small']; ?>, <?php echo $all_CI['medium']; ?>, <?php echo $all_CI['large']; ?>, <?php echo $all_CI['average']; ?>]
+                ]);
+                var options = {
+                    title: 'All methods in Yii, Zend and Codeigniter compared with different table sizes',
+                    height: 300,
+                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    hAxis: {title: 'Framework Methods', titleTextStyle: {color: 'red'}},
+                    seriesType: "bars",
+                    series: {3: {type: "line"}}
+                };
+                var chart = new google.visualization.ComboChart(document.getElementById('chart4-all'));
+                chart.draw(data, options);
+            }
             
             function drawChart1() {
                 var data = google.visualization.arrayToDataTable([
@@ -43,13 +85,13 @@
             
             function drawChart2() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'Yii', 'Zend', 'Codeigniter'],
-                    ['Small', <?php echo $findAll_Yii['small']; ?>, <?php echo $fetchAll_Zend['small']; ?>, <?php echo $get_where_CI['small']; ?>],
-                    ['Medium', <?php echo $findAll_Yii['medium']; ?>, <?php echo $fetchAll_Zend['medium']; ?>, <?php echo $get_where_CI['medium']; ?>],
-                    ['Large', <?php echo $findAll_Yii['large']; ?>, <?php echo $fetchAll_Zend['large']; ?>, <?php echo $get_where_CI['large']; ?>]
+                    ['Database Type', 'Yii(findAll())', 'Zend(fetchAll())', 'Codeigniter(get())'],
+                    ['Small', <?php echo $findAll_Yii['small']; ?>, <?php echo $fetchAll_Zend['small']; ?>, <?php echo $get_CI['small']; ?>],
+                    ['Medium', <?php echo $findAll_Yii['medium']; ?>, <?php echo $fetchAll_Zend['medium']; ?>, <?php echo $get_CI['medium']; ?>],
+                    ['Large', <?php echo $findAll_Yii['large']; ?>, <?php echo $fetchAll_Zend['large']; ?>, <?php echo $get_CI['large']; ?>]
                 ]);
                 var options = {
-                    title: 'Comparation between findAll(Yii), fetchAll(zend), get_where(codeigniter)',
+                    title: 'Comparation between findAll(Yii), fetchAll(zend), get(codeigniter)',
                     vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
@@ -59,10 +101,10 @@
             
             function drawChart3() {
                 var data = google.visualization.arrayToDataTable([
-                    ['Database Type', 'Yii', 'Zend', 'Codeigniter'],
-                    ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $fetchRow_Zend['small']; ?>, <?php echo $get['small']; ?>],
-                    ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $fetchRow_Zend['medium']; ?>, <?php echo $get['medium']; ?>],
-                    ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $fetchRow_Zend['large']; ?>, <?php echo $get['large']; ?>]
+                    ['Database Type', 'Yii (find())', 'Zend(fetchRow())', 'Codeigniter(get_where())'],
+                    ['Small', <?php echo $find_Yii['small']; ?>, <?php echo $fetchRow_Zend['small']; ?>, <?php echo $get_where_CI['small']; ?>],
+                    ['Medium', <?php echo $find_Yii['medium']; ?>, <?php echo $fetchRow_Zend['medium']; ?>, <?php echo $get_where_CI['medium']; ?>],
+                    ['Large', <?php echo $find_Yii['large']; ?>, <?php echo $fetchRow_Zend['large']; ?>, <?php echo $get_where_CI['large']; ?>]
                 ]);
                 var options = {
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
@@ -138,6 +180,34 @@
                     </div>
                 </div>
                 
+                <div id="all-methods-database" class="block-wrapper">
+                    <h2>All methods per table size</h2>
+                    <div class="block-description">
+                        This example is average execution time for all methods from one framework per table size.
+                        In the diagram below we are comparing all methods from one framework
+                        how they will act with different table sizes.
+                    </div>
+                    <div class="block-chart">
+                        <div id="chart0-all"></div>
+                    </div>
+                    <div class="block-description">
+                        This diagram show us the same result as before, that Codeigniter is fastes framework.
+                    </div>
+                </div>
+                
+                <div id="all-methods-framework" class="block-wrapper">
+                    <h2>All methods per framework</h2>
+                    <div class="block-description">
+                        Description.
+                    </div>
+                    <div class="block-chart">
+                        <div id="chart4-all"></div>
+                    </div>
+                    <div class="block-description">
+                        Conclusion.
+                    </div>
+                </div>
+                
                 <div id="selectall" class="block-wrapper">
                     <h2>Select all records</h2>
                     <div class="block-description">
@@ -153,20 +223,24 @@
                     </div>
                 </div>
                 
-                <div id="findAll-fetchAll-get_where" class="block-wrapper">
-                    <h2>Comparation between findAll(Yii), fetchAll(zend), get_where(codeigniter)</h2>
+                <div id="findAll-fetchAll-get" class="block-wrapper">
+                    <h2>Comparation between findAll(Yii), fetchAll(zend), get(codeigniter)</h2>
                     <div class="block-description">
-                        Компарација меѓу findAll(Yii), fetchAll(zend), get_where(codeigniter)
+                        These three methods are mostly used in selecting multiple rows from database.
+                        From the diagram we can conclude that get() method on Codeigniter is fastest,
+                        followed by fetchALl() on Zend, and findAll() on Yii is drastically slower.
                     </div>
                     <div class="block-chart">
                         <div id="chart2-all"></div>
                     </div>
                 </div>
                 
-                <div id="find-fetchRow-select" class="block-wrapper">
-                    <h2>Comparation between find(Yii), fetchRow(zend), Select one record (codeigniter)</h2>
+                <div id="find-fetchRow-get_where" class="block-wrapper">
+                    <h2>Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)</h2>
                     <div class="block-description">
-                        Компарација меѓу find(Yii), fetchRow(zend), Select one record (codeigniter)
+                        These three methods are mostly used in selecting single row from database.
+                        In this comaration also leads get_where() method on Codeigniter,
+                        than fetchRow() on Zend and find() method on Yii.
                     </div>
                     <div class="block-chart">
                         <div id="chart3-all"></div>
