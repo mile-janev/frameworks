@@ -55,7 +55,7 @@
                     ['Codeigniter', <?php echo $all_CI['small']; ?>, <?php echo $all_CI['medium']; ?>, <?php echo $all_CI['large']; ?>, <?php echo $all_CI['average']; ?>]
                 ]);
                 var options = {
-                    title: 'All methods in Yii, Zend and Codeigniter compared with different table sizes',
+                    title: 'All methods separated in Yii, Zend and Codeigniter compared with different table sizes',
                     height: 300,
                     vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Framework Methods', titleTextStyle: {color: 'red'}},
