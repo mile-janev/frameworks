@@ -12,33 +12,6 @@
  * @author mile
  */
 class Library {
-    /*Prepare results for displaying in chart*/
-    public function formatArray($results)
-    {
-        $formatedArray = array();
-        $small = 0;
-        $medium = 0;
-        $large = 0;
-        $time = 0;
-        
-        foreach ($results as $result) {
-            $small += $result->small;
-            $medium += $result->medium;
-            $large += $result->large;
-            $time += $result->execution_time;
-        }
-        
-        $interval = 60/$time;//Ova e interval, posle go mnozeme so small/medium/large za 
-                            //da dobieme kolku e prosekot na izvrseni upiti vo minuta
-        
-        $formatedArray['tests'] = count($results);
-        $formatedArray['small'] = round($small*$interval);
-        $formatedArray['medium'] = round($medium*$interval);
-        $formatedArray['large'] = round($large*$interval);
-        $formatedArray['average'] = round(($formatedArray['small']+$formatedArray['medium']+$formatedArray['large'])/3);
-        
-        return $formatedArray;
-    }
     
     public function findStatistic($framework, $function)
     {
@@ -70,4 +43,33 @@ class Library {
         
         return $statistic;
     }
+    
+    /*Prepare results for displaying in chart*/
+    public function formatArray($results)
+    {
+        $formatedArray = array();
+        $small = 0;
+        $medium = 0;
+        $large = 0;
+        $time = 0;
+        
+        foreach ($results as $result) {
+            $small += $result->small;
+            $medium += $result->medium;
+            $large += $result->large;
+            $time += $result->execution_time;
+        }
+        
+        $interval = 60/$time;//Ova e interval, posle go mnozeme so small/medium/large za 
+                            //da dobieme kolku e prosekot na izvrseni upiti vo minuta
+        
+        $formatedArray['tests'] = count($results);
+        $formatedArray['small'] = round($small*$interval);
+        $formatedArray['medium'] = round($medium*$interval);
+        $formatedArray['large'] = round($large*$interval);
+        $formatedArray['average'] = round(($formatedArray['small']+$formatedArray['medium']+$formatedArray['large'])/3);
+        
+        return $formatedArray;
+    }
+    
 }

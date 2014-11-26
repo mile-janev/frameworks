@@ -19,14 +19,12 @@
                 drawChart1();
                 drawChart2();
                 drawChart3();
-                drawChart4();
             });
             
             google.setOnLoadCallback(drawChart0);
             google.setOnLoadCallback(drawChart1);
             google.setOnLoadCallback(drawChart2);
             google.setOnLoadCallback(drawChart3);
-            google.setOnLoadCallback(drawChart4);
             
             function drawChart0() {
                 var data = google.visualization.arrayToDataTable([
@@ -44,25 +42,6 @@
                     series: {3: {type: "line"}}
                 };
                 var chart = new google.visualization.ComboChart(document.getElementById('chart0-all'));
-                chart.draw(data, options);
-            }
-            
-            function drawChart4() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Method', 'Small', 'Medium', 'Large', 'Average'],
-                    ['Yii', <?php echo $all_Yii['small']; ?>, <?php echo $all_Yii['medium']; ?>, <?php echo $all_Yii['large']; ?>, <?php echo $all_Yii['average']; ?>],
-                    ['Zend', <?php echo $all_Zend['small']; ?>, <?php echo $all_Zend['medium']; ?>, <?php echo $all_Zend['large']; ?>, <?php echo $all_Zend['average']; ?>],
-                    ['Codeigniter', <?php echo $all_CI['small']; ?>, <?php echo $all_CI['medium']; ?>, <?php echo $all_CI['large']; ?>, <?php echo $all_CI['average']; ?>]
-                ]);
-                var options = {
-                    title: 'All methods separated in Yii, Zend and Codeigniter compared with different table sizes',
-                    height: 300,
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
-                    hAxis: {title: 'Framework Methods', titleTextStyle: {color: 'red'}},
-                    seriesType: "bars",
-                    series: {3: {type: "line"}}
-                };
-                var chart = new google.visualization.ComboChart(document.getElementById('chart4-all'));
                 chart.draw(data, options);
             }
             
@@ -191,20 +170,7 @@
                         <div id="chart0-all"></div>
                     </div>
                     <div class="block-description">
-                        This diagram show us the same result as before, that Codeigniter is fastes framework.
-                    </div>
-                </div>
-                
-                <div id="all-methods-framework" class="block-wrapper">
-                    <h2>All methods per framework</h2>
-                    <div class="block-description">
-                        Description.
-                    </div>
-                    <div class="block-chart">
-                        <div id="chart4-all"></div>
-                    </div>
-                    <div class="block-description">
-                        Conclusion.
+                        This diagram show us the same result as before, that Codeigniter is fastest framework.
                     </div>
                 </div>
                 
