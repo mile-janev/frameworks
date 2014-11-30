@@ -5,7 +5,7 @@ if (strpos($_SERVER['DOCUMENT_ROOT'], 'wamp')) {
     $password = "toor";
 }
 
-$executions = 2;
+$executions = 50;
 
 $mysql_database = "frameworks";
 $db = @mysql_connect("localhost", "root", $password) or die("Could not connect database");
