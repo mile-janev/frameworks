@@ -16,63 +16,63 @@ $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND f
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/selectall/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'find()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/find/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findByPk()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findbypk/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findByAttributes()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findbyattributes/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findBySql()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findbysql/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findAll()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findall/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findAllByPk()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findallbypk/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findAllByAttributes()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findallbyattributes/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'yii' AND function = 'findAllBySql()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/yii/index.php?r=site/findallbysql/';
-    exit();
+    execute_link($url);
 }
 
 //Zend
@@ -80,35 +80,35 @@ $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'zend' AND 
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/zend/public/site/selectall/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'zend' AND function = 'find()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/zend/public/site/find/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'zend' AND function = 'fetchRow()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/zend/public/site/fetchrow/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'zend' AND function = 'fetchAll()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/zend/public/site/fetchall/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'zend' AND function = 'Zend_Db_Select'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/zend/public/site/zenddbselect/';
-    exit();
+    execute_link($url);
 }
 
 //Codeigniter
@@ -116,42 +116,44 @@ $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'codeignite
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/codeigniter/index.php/site/selectall/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'codeigniter' AND function = 'get_where()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/codeigniter/index.php/site/getwhere/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'codeigniter' AND function = 'get()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/codeigniter/index.php/site/getmethod/';
-    exit();
+    execute_link($url);
 }
 
 $query = "SELECT COUNT(*) as number FROM statistic WHERE framework = 'codeigniter' AND function = 'query()'";
 $row = mysql_fetch_object(mysql_query($query));
 if ($row->number < $executions) {
     $url = 'http://frameworks.dev/projects/codeigniter/index.php/site/querymethod/';
-    exit();
+    execute_link($url);
 }
 
 //Executing url using curl
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url); 
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/6.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.7) Gecko/20050414 Firefox/1.0.3");
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
-$result = curl_exec ($ch); 
-curl_close ($ch);
-
-var_dump($row);
-exit();
+function execute_link($url)
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url); 
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/6.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.7) Gecko/20050414 Firefox/1.0.3");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
+    $result = curl_exec ($ch); 
+    curl_close ($ch);
+    
+    exit();
+}
 
 ?>
