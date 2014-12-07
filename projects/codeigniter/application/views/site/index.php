@@ -26,7 +26,7 @@
                 ]);
                 var options = {
                     title: 'get_where(), get() & query() in Codeigniter',
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                     height: 300
                 };

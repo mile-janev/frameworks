@@ -36,7 +36,7 @@
                 var options = {
                     title: 'All methods in Yii, Zend and Codeigniter compared with different table sizes',
                     height: 300,
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Framework Methods', titleTextStyle: {color: 'red'}},
                     seriesType: "bars",
                     series: {3: {type: "line"}}
@@ -55,7 +55,7 @@
                 var options = {
                     title: 'Select all records from table',
                     vAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
-                    hAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    hAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     height:300
                 };
                 var chart = new google.visualization.BarChart(document.getElementById('chart1-all'));
@@ -71,7 +71,7 @@
                 ]);
                 var options = {
                     title: 'Comparation between findAll(Yii), fetchAll(zend), get(codeigniter)',
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.LineChart(document.getElementById('chart2-all'));
@@ -87,7 +87,7 @@
                 ]);
                 var options = {
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart3-all'));

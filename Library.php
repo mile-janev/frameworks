@@ -60,8 +60,8 @@ class Library {
             $time += $result->execution_time;
         }
         
-        $interval = 60/$time;//Ova e interval, posle go mnozeme so small/medium/large za 
-                            //da dobieme kolku e prosekot na izvrseni upiti vo minuta
+        $interval = 60/$time;//This is interval, we are multiplying this with small/medium/large
+                            //to see the average for executed queries per minute
         
         $formatedArray['tests'] = count($results);
         $formatedArray['small'] = round($small*$interval);

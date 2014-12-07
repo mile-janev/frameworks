@@ -178,7 +178,7 @@
         ]);
         var options = {
             title: 'find(), findByPk(), findByAttributes(), findBySql(), findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
-            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+            vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300
         };
@@ -197,7 +197,7 @@
         var options = {
             title: 'findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
             height: 300,
-            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+            vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Method', titleTextStyle: {color: 'red'}},
             seriesType: "bars",
             series: {3: {type: "line"}}
@@ -217,7 +217,7 @@
         var options = {
             title: 'findAll(), findAllByPk(), findAllByAttributes(), findAllBySql() in Yii',
             height: 300,
-            vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+            vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Method', titleTextStyle: {color: 'red'}},
             seriesType: "bars",
             series: {3: {type: "line"}}
