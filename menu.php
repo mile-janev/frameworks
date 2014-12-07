@@ -1,7 +1,7 @@
 <?php $serverName = "http://".$_SERVER['HTTP_HOST']; ?>
 <?php $currentUrl = $_SERVER['REQUEST_URI']; ?>
 
-<div id="titleSite"><a href="<?php echo $serverName; ?>">PHP Frameworks Performance Benchmark with Database Operations</a></div>
+<div id="titleSite"><a href="<?php echo $serverName; ?>">PHP Frameworks Performance Benchmark with Database</a></div>
 <ul id="mainMenu">
     <li<?php echo (preg_match('/yii/',$currentUrl)) ? ' class="active"' : ''; ?>>
         <a href="<?php echo $serverName; ?>/projects/yii/index.php?r=site/index/">Yii</a>

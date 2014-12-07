@@ -1,4 +1,4 @@
 php_frameworks
 ==============
 
-PHP Frameworks Performance Benchmark with Database Operations
+PHP Frameworks Performance Benchmark with Database

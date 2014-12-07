@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
-        <title>PHP Frameworks Performance Benchmark with Database Operations</title>        
+        <title>PHP Frameworks Performance Benchmark with Database</title>        
         <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/main.css" />
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/main.js"></script>
@@ -102,7 +102,7 @@
             <div class="container" id="page">
                 
                 <div id="introduction" class="block-wrapper">
-                    <h1>PHP Frameworks Performance Benchmark with Database Operations</h1>
+                    <h1>PHP Frameworks Performance Benchmark with Database</h1>
                     <div class="block-description">
                         <p>
                             Project purpose is to compare speed in selecting records from database
