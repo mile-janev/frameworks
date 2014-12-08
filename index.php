@@ -156,6 +156,14 @@
                                 <li>PHP version: 5.3.10</li>
                             </ul>
                         </p>
+                        <p>
+                            Frameworks versions are:
+                            <ul>
+                                <li>Yii: 1.1.15</li>
+                                <li>Zend: 1.11.11</li>
+                                <li>Codeigniter: 2.2.0</li>
+                            </ul>
+                        </p>
                     </div>
                 </div>
                 
