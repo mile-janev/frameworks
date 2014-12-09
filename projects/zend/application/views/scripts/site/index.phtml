@@ -7,7 +7,10 @@
                 - 
                 <span>
                     Receiving integer (primary key for table) or array of integers as parameter.
-                    Return an object of class Zend_Db_Table_Rowset.
+                    Return an object of class Zend_Db_Table_Rowset_Abstract.
+                    A Rowset contains a collection of objects descending from Zend_Db_Table_Row_Abstract. 
+                    You can iterate through the Rowset and access individual Row objects, 
+                    reading or modifying data in the Rows.
                     Object with empty data is returned if record is not founded.
                 </span>
             </li>
@@ -25,7 +28,10 @@
                 - 
                 <span>
                     Receiving a string like query condition (example: "id=".$id).
-                    Return an object from class Zend_Db_Table_Rowset.
+                    Return an object of class Zend_Db_Table_Rowset_Abstract.
+                    A Rowset contains a collection of objects descending from Zend_Db_Table_Row_Abstract. 
+                    You can iterate through the Rowset and access individual Row objects, 
+                    reading or modifying data in the Rows.
                     Object with empty data is returned if record is not founded.
                 </span>
             </li>
@@ -69,26 +75,15 @@
             </p>
         </div>
     </div>
-    
+        
     <div class="block-wrapper-inner">
-        <h3>Selecting one record (find() & fetchRow())</h3>
+        <h3>Comaration of methods</h3>
         <div class="block-description">
             <p>
-                These two methods return one result from database. If we have case when we need to select
-                row when we have the primary key, we can use any of these methods. But, find() method is much more
-                specific, than select only by primary key. This makes him faster than fetchRow();
-            </p>
-        </div>
-    </div>
-    
-    <div class="block-wrapper-inner">
-        <h3>Selecting multiple records (findAll() & Zend_Db_Select)</h3>
-        <div class="block-description">
-            <p>
-                These two methods will return us all result from database which will satisfy the query.
-                As we can see from diagram, findAll() method is much faster than using Zend_Db_Select.
+                As we can see from diagram, fetchAll() method is much faster than others.
                 Advantage of Zend_Db_Select is writing partial queries, which is much easier for building
-                dynamic query.
+                dynamic query, find() is good when we need to select by primary key, while fetchRow is 
+                used when we need simple and quick query who return one result from database.
             </p>
         </div>
     </div>
