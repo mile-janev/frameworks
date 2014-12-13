@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
-        <title>PHP Frameworks Speed Benchmark</title>        
+        <title>PHP Frameworks Performance Benchmark with Database</title>        
         <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/main.css" />
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/main.js"></script>
@@ -36,7 +36,7 @@
                 var options = {
                     title: 'All methods in Yii, Zend and Codeigniter compared with different table sizes',
                     height: 300,
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Framework Methods', titleTextStyle: {color: 'red'}},
                     seriesType: "bars",
                     series: {3: {type: "line"}}
@@ -55,7 +55,7 @@
                 var options = {
                     title: 'Select all records from table',
                     vAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
-                    hAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    hAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     height:300
                 };
                 var chart = new google.visualization.BarChart(document.getElementById('chart1-all'));
@@ -71,7 +71,7 @@
                 ]);
                 var options = {
                     title: 'Comparation between findAll(Yii), fetchAll(zend), get(codeigniter)',
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.LineChart(document.getElementById('chart2-all'));
@@ -87,7 +87,7 @@
                 ]);
                 var options = {
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart3-all'));
@@ -102,7 +102,7 @@
             <div class="container" id="page">
                 
                 <div id="introduction" class="block-wrapper">
-                    <h1>PHP Frameworks Speed Benchmark</h1>
+                    <h1>PHP Frameworks Performance Benchmark with Database</h1>
                     <div class="block-description">
                         <p>
                             Project purpose is to compare speed in selecting records from database
@@ -154,6 +154,14 @@
                                 <li>Apache version: 2.2.22</li>
                                 <li>MySQL version: 5.6.21</li>
                                 <li>PHP version: 5.3.10</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Frameworks versions are:
+                            <ul>
+                                <li>Yii: 1.1.15</li>
+                                <li>Zend: 1.11.11</li>
+                                <li>Codeigniter: 2.2.0</li>
                             </ul>
                         </p>
                     </div>

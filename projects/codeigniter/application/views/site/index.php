@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Codeigniter | PHP Frameworks Speed Benchmark</title>
+        <title>Codeigniter | PHP Frameworks Performance Benchmark with Database</title>
         <link rel="stylesheet" type="text/css" href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/css/main.css" />
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/js/main.js"></script>
@@ -26,7 +26,7 @@
                 ]);
                 var options = {
                     title: 'get_where(), get() & query() in Codeigniter',
-                    vAxis: {title: 'Executions per second', titleTextStyle: {color: 'red'}},
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
                     height: 300
                 };

@@ -86,7 +86,7 @@ p{
     margin-bottom: 1em;
 }
 h1{
-    font-size: 30px;
+    font-size: 27px;
     margin-top: 10px;
     margin-bottom: 20px;
     font-weight: bold;
@@ -178,14 +178,16 @@ strong, b{
 #titleSite{
     position: absolute;
     float: left;
+    max-width: 500px;
 }
 #titleSite a{
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     float: left;
     color: #1a5e83;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
+    text-align: left;
 }
 #mainMenu > li > a
 {
@@ -286,8 +288,26 @@ strong, b{
     
 }
 
+
+@media (max-width: 1310px) {
+    #titleSite {
+        max-width: 300px;
+    }
+    #titleSite a {
+      padding: 4px 4px;
+    }
+}
+
 @media (max-width: 900px) {
-  #titleSite {
-    display: none;
-  }
+    #titleSite {
+        max-width: 225px;
+    }
+    #titleSite a{
+        font-size: 12px;
+    }
+}
+@media (max-width: 800px) {
+    #titleSite {
+        display: none;
+    }    
 }
