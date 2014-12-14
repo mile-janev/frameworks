@@ -55,6 +55,12 @@
     </div>
 </div>
 
+<div class="block-wrapper">
+    <div class="block-chart">
+        <div id="chart2-zend"></div>
+    </div>
+</div>
+
 <div id="find-fetchRow" class="block-wrapper">
     
     <div class="block-wrapper-inner">
@@ -94,12 +100,14 @@
     google.load("visualization", "1", {packages:["corechart"]});
     
     jQuery(window).resize(function(){
-        drawChart();
+        drawChart1();
+        drawChart2();
     });
     
-    google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart1);
+    google.setOnLoadCallback(drawChart2);
     
-    function drawChart() {
+    function drawChart1() {
         var data = google.visualization.arrayToDataTable([
             ['Database Type', 'find()', 'fetchRow()', 'fetchAll()', 'Zend_Db_Select'],
             ['Small', <?php echo $this->find_zend['small']; ?>, <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->fetchAll_zend['small']; ?>, <?php echo $this->dbselect_zend['small']; ?>],
@@ -111,9 +119,29 @@
             vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300,
-            chartArea: {  width: "60%", height: "80%" }
+            chartArea: {width: "60%"}
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart1-zend'));
+        chart.draw(data, options);
+    }
+    
+    function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+            ['Method', 'Small', 'Medium', 'Large', 'Average'],
+            ['find()', <?php echo $this->find_zend['small']; ?>, <?php echo $this->find_zend['medium']; ?>, <?php echo $this->find_zend['large']; ?>, <?php echo $this->find_zend['average']; ?>],
+            ['fetchRow()', <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>, <?php echo $this->fetchRow_zend['large']; ?>, <?php echo $this->fetchRow_zend['average']; ?>],
+            ['fetchAll()', <?php echo $this->fetchAll_zend['small']; ?>, <?php echo $this->fetchAll_zend['medium']; ?>, <?php echo $this->fetchAll_zend['large']; ?>, <?php echo $this->fetchAll_zend['average']; ?>],
+            ['Zend_Db_Select()', <?php echo $this->dbselect_zend['small']; ?>, <?php echo $this->dbselect_zend['medium']; ?>, <?php echo $this->dbselect_zend['large']; ?>, <?php echo $this->dbselect_zend['average']; ?>]
+        ]);
+        var options = {
+            title: 'find(), fetchRow(), fetchAll(), Zend_Db_Select in Zend',
+            height: 300,
+            vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
+            hAxis: {title: 'Method', titleTextStyle: {color: 'red'}},
+            seriesType: "bars",
+            series: {3: {type: "line"}}
+        };
+        var chart = new google.visualization.ComboChart(document.getElementById('chart2-zend'));
         chart.draw(data, options);
     }
 </script>

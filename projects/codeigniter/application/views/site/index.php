@@ -12,12 +12,14 @@
             google.load("visualization", "1", {packages:["corechart"]});
 
             jQuery(window).resize(function(){
-                drawChart();
+                drawChart1();
+                drawChart2();
             });
 
-            google.setOnLoadCallback(drawChart);
+            google.setOnLoadCallback(drawChart1);
+            google.setOnLoadCallback(drawChart2);
 
-            function drawChart() {
+            function drawChart1() {
                 var data = google.visualization.arrayToDataTable([
                     ['Database Type', 'get_where()', 'get()', 'query()'],
                     ['Small', <?php echo $get_where_ci['small']; ?>, <?php echo $get_ci['small']; ?>, <?php echo $query_ci['small']; ?>],
@@ -31,6 +33,25 @@
                     height: 300
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart1-codeigniter'));
+                chart.draw(data, options);
+            }
+            
+            function drawChart2() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Method', 'Small', 'Medium', 'Large', 'Average'],
+                    ['get_where()', <?php echo $get_where_ci['small']; ?>, <?php echo $get_where_ci['medium']; ?>, <?php echo $get_where_ci['large']; ?>, <?php echo $get_where_ci['average']; ?>],
+                    ['get()', <?php echo $get_ci['small']; ?>, <?php echo $get_ci['medium']; ?>, <?php echo $get_ci['large']; ?>, <?php echo $get_ci['average']; ?>],
+                    ['query()', <?php echo $query_ci['small']; ?>, <?php echo $query_ci['medium']; ?>, <?php echo $query_ci['large']; ?>, <?php echo $query_ci['average']; ?>]
+                ]);
+                var options = {
+                    title: 'get_where(), get(), query() in Codeigniter',
+                    height: 300,
+                    vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
+                    hAxis: {title: 'Method', titleTextStyle: {color: 'red'}},
+                    seriesType: "bars",
+                    series: {3: {type: "line"}}
+                };
+                var chart = new google.visualization.ComboChart(document.getElementById('chart2-codeigniter'));
                 chart.draw(data, options);
             }
         </script>
@@ -84,6 +105,12 @@
                 <div class="block-wrapper">
                     <div class="block-chart">
                         <div id="chart1-codeigniter"></div>
+                    </div>
+                </div>
+                
+                <div class="block-wrapper">
+                    <div class="block-chart">
+                        <div id="chart2-codeigniter"></div>
                     </div>
                 </div>
                 

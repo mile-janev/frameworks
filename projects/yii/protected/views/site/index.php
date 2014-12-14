@@ -137,7 +137,6 @@
             <div id="chart3-yii"></div>
         </div>
     </div>
-    
 </div>
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
@@ -180,7 +179,7 @@
             vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
             height: 300,
-            chartArea: {  width: "60%", height: "80%" }
+            chartArea: {width: "60%"}
         };
         var chart = new google.visualization.LineChart(document.getElementById('chart1-yii'));
         chart.draw(data, options);

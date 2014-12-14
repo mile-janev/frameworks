@@ -73,7 +73,7 @@
                     title: 'Comparation between findAll(Yii), fetchAll(zend), get(codeigniter)',
                     vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
-                    chartArea: {  width: "60%", height: "80%" }
+                    chartArea: {width: "60%"}
                 };
                 var chart = new google.visualization.LineChart(document.getElementById('chart2-all'));
                 chart.draw(data, options);
@@ -90,7 +90,7 @@
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
                     vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
-                    chartArea: {  width: "60%", height: "80%" }
+                    chartArea: {width: "60%"}
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart3-all'));
                 chart.draw(data, options);
@@ -204,7 +204,7 @@
                     <div class="block-description">
                         These three methods are mostly used in selecting multiple rows from database.
                         From the diagram we can conclude that get() method on Codeigniter is fastest,
-                        followed by fetchALl() on Zend, and findAll() on Yii is drastically slower.
+                        followed by fetchAll() on Zend, and findAll() on Yii is drastically slower.
                     </div>
                     <div class="block-chart">
                         <div id="chart2-all"></div>

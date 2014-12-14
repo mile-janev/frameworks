@@ -160,7 +160,7 @@ strong, b{
 #mainMenu{
     margin: 0 auto;
     padding: 0;
-    width: 350px;
+    width: 270px;
 }
 #mainMenu > li{
     list-style-type: none;
@@ -288,6 +288,9 @@ strong, b{
     
 }
 
+.linkDisabled {
+    cursor: default;
+}
 
 @media (max-width: 1310px) {
     #titleSite {

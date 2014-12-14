@@ -9,4 +9,8 @@ $(document).ready(function(){
         }
     )
     
+    $(".linkDisabled").click(function(e){
+        e.preventDefault();
+    })
+    
 })
