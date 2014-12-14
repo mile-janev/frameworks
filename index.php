@@ -73,6 +73,7 @@
                     title: 'Comparation between findAll(Yii), fetchAll(zend), get(codeigniter)',
                     vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+                    chartArea: {  width: "60%", height: "80%" }
                 };
                 var chart = new google.visualization.LineChart(document.getElementById('chart2-all'));
                 chart.draw(data, options);
@@ -89,6 +90,7 @@
                     title: 'Comparation between find(Yii), fetchRow(zend), get_where(codeigniter)',
                     vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
                     hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
+                    chartArea: {  width: "60%", height: "80%" }
                 };
                 var chart = new google.visualization.ColumnChart(document.getElementById('chart3-all'));
                 chart.draw(data, options);

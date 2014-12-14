@@ -110,7 +110,8 @@
             title: 'find(), fetchRow(), fetchAll(), Zend_Db_Select in Zend',
             vAxis: {title: 'Executions per minute', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Table Size', titleTextStyle: {color: 'red'}},
-            height: 300
+            height: 300,
+            chartArea: {  width: "60%", height: "80%" }
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart1-zend'));
         chart.draw(data, options);
