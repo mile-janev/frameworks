@@ -292,7 +292,7 @@ strong, b{
     cursor: default;
 }
 
-@media (max-width: 1310px) {
+@media (max-width: 1024px) {
     #titleSite {
         max-width: 300px;
     }
