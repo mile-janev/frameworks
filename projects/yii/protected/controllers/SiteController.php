@@ -218,7 +218,7 @@ class SiteController extends Controller
     {
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
-            $this->criteria->addCondition(array("id"=>$this->i));
+            $this->criteria->addCondition("id = ." . $this->i);
             SPost::model()->findAll($this->criteria);
             $this->i++;
             $this->s++;
@@ -227,7 +227,7 @@ class SiteController extends Controller
         
         $medium = microtime(true)+$this->t;
         while ($medium >= microtime(true)) {
-            $this->criteria->addCondition(array("id"=>$this->i));
+            $this->criteria->addCondition("id = ." . $this->i);
             MPost::model()->findAll($this->criteria);
             $this->i++;
             $this->m++;
@@ -236,7 +236,7 @@ class SiteController extends Controller
 
         $large = microtime(true)+$this->t;
         while ($large >= microtime(true)) {
-            $this->criteria->addCondition(array("id"=>$this->i));
+            $this->criteria->addCondition("id = ." . $this->i);
             LPost::model()->findAll($this->criteria);
             $this->i++;
             $this->l++;
