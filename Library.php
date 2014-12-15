@@ -26,7 +26,7 @@ class Library {
         mysql_select_db($mysql_database, $db) or die("Could not select database");
         
         if ($function == 'all') {
-            $query = "SELECT * FROM statistic WHERE framework = '$framework'";
+            $query = "SELECT * FROM statistic WHERE framework = '$framework' AND function != 'selectall'";
         } else {
             $query = "SELECT * FROM statistic WHERE framework = '$framework' AND function = '$function'";
         }
