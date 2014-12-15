@@ -181,7 +181,7 @@
             height: 300,
             chartArea: {width: "60%"}
         };
-        var chart = new google.visualization.LineChart(document.getElementById('chart1-yii'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart1-yii'));
         chart.draw(data, options);
     }
     
