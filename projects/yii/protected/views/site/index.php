@@ -161,7 +161,7 @@
             [
                 'Small', 
                 <?php echo $find_Yii['small']; ?>, <?php echo $findByPk_Yii['small']; ?>, <?php echo $findByAttributes_Yii['small']; ?>, <?php echo $findBySql_Yii['small']; ?>,
-                <?php echo $find_Yii['small']; ?>, <?php echo $findByPk_Yii['small']; ?>, <?php echo $findByAttributes_Yii['small']; ?>, <?php echo $findBySql_Yii['small']; ?>
+                <?php echo $findAll_Yii['small']; ?>, <?php echo $findAllByPk_Yii['small']; ?>, <?php echo $findAllByAttributes_Yii['small']; ?>, <?php echo $findAllBySql_Yii['small']; ?>
             ],
             [
                 'Medium', 
