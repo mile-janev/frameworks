@@ -7,10 +7,13 @@ class Site extends CI_Controller
     private $l;
     private $t;
     private $i;
+    private $stop;//If TRUE, than stop execution here
     
     public function __construct()
     {
         parent::__construct();
+        
+        $this->stop = TRUE;
         
         $this->load->database();
         
@@ -68,6 +71,10 @@ class Site extends CI_Controller
     /*Test custom query("custom query"). Select more posts with condition*/
     public function querymethod()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $this->db->query("SELECT * FROM s_post WHERE id = ".$this->i);
@@ -105,6 +112,10 @@ class Site extends CI_Controller
     /*Test method get_where(). Select one record with condition.*/
     public function getwhere()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $this->db->get_where('s_post', array('id'=>$this->i));
@@ -142,6 +153,10 @@ class Site extends CI_Controller
     /*Test method get(). Select all results.*/
     public function selectall()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $this->db->get('s_post');
@@ -173,6 +188,10 @@ class Site extends CI_Controller
     /*Test method get(). Select more results.*/
     public function getmethod()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $this->db->select('*');

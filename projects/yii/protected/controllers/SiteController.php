@@ -8,9 +8,12 @@ class SiteController extends Controller
     private $l;//Large (500 000)
     private $t;//Time
     private $i;//Counter
+    private $stop;//If TRUE, than stop execution here
 
     public function init()
     {
+        $this->stop = TRUE;
+        
         $this->criteria = new CDbCriteria();
         $this->criteria->select = "*";
         
@@ -24,21 +27,6 @@ class SiteController extends Controller
         $this->l = 0;
         $this->t = 10;
         $this->i = 1;
-    }
-    
-    public function actionCron()
-    {
-        for ($i=0; $i<8; $i++)
-        {
-            $this->actionFind();                $this->reset();
-            $this->actionFindbypk();            $this->reset();
-            $this->actionFindbyattributes();    $this->reset();
-            $this->actionFindbysql();           $this->reset();
-            $this->actionFindall();             $this->reset();
-            $this->actionFindallbypk();         $this->reset();
-            $this->actionFindallbyattributes(); $this->reset();
-            $this->actionFindallbysql();        $this->reset();
-        }
     }
 
     /*Saving test info into database*/
@@ -65,6 +53,10 @@ class SiteController extends Controller
     /*Test method find()*/
     public function actionFind()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $this->criteria->addCondition(array("id"=>$this->i));
@@ -105,6 +97,10 @@ class SiteController extends Controller
     /*Test method findByPk()*/
     public function actionFindbypk()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findByPk($this->i);
@@ -142,6 +138,10 @@ class SiteController extends Controller
     /*Test method findByAttributes()*/
     public function actionFindbyattributes()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findByAttributes(array("id" => $this->i));
@@ -179,6 +179,10 @@ class SiteController extends Controller
     /*Test method findBySql()*/
     public function actionFindbysql()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>$this->i));
@@ -216,6 +220,10 @@ class SiteController extends Controller
     /*Test method findAll()*/
     public function actionFindall()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             $this->criteria->addCondition("id = ." . $this->i);
@@ -256,6 +264,10 @@ class SiteController extends Controller
     /*Test method findAllByPk()*/
     public function actionFindallbypk()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findAllByPk(array($this->i));
@@ -293,6 +305,10 @@ class SiteController extends Controller
     /*Test method findAllByAttributes()*/
     public function actionFindallbyattributes()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findAllByAttributes(array("id" => $this->i));
@@ -330,6 +346,10 @@ class SiteController extends Controller
     /*Test method findAllBySql()*/
     public function actionFindallbysql()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findAllBySql("SELECT * FROM s_post WHERE id = :id", array(":id"=>$this->i));
@@ -367,6 +387,10 @@ class SiteController extends Controller
     /*Select all posts no parameters*/
     public function actionSelectall()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
             SPost::model()->findAll();

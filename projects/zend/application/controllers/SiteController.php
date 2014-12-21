@@ -8,9 +8,12 @@ class SiteController extends Zend_Controller_Action
     private $l;//Large (500 000)
     private $t;//Time
     private $i;//Counter
+    private $stop;//If TRUE, than stop execution here
 
     public function init()
     {
+        $this->stop = TRUE;
+        
         $this->db = Zend_Db_Table::getDefaultAdapter();
         
         $this->reset();
@@ -53,6 +56,10 @@ class SiteController extends Zend_Controller_Action
     /*Test method fetchRow()*/
     public function fetchrowAction()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $sPost = new Application_Model_DbTable_SPost();
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
@@ -92,6 +99,10 @@ class SiteController extends Zend_Controller_Action
     /*Test method find(). Accept only primary key*/
     public function findAction()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $sPost = new Application_Model_DbTable_SPost();
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
@@ -131,6 +142,10 @@ class SiteController extends Zend_Controller_Action
     /*Test method fetchAll()*/
     public function fetchallAction()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $sPost = new Application_Model_DbTable_SPost();
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
@@ -171,6 +186,10 @@ class SiteController extends Zend_Controller_Action
     /*Select all posts no parameters*/
     public function selectallAction()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $sPost = new Application_Model_DbTable_SPost();
         $small = microtime(true)+$this->t;
         while ($small >= microtime(true)) {
@@ -204,6 +223,10 @@ class SiteController extends Zend_Controller_Action
     /*Using class Zend_Db_Select*/
     public function zenddbselectAction()
     {
+        if ($this->stop) {
+            die("Execution is not allowed.");
+        }
+        
         $select1 = new Zend_Db_Select($this->db);
         $select1 = $this->db->select()->from('s_post');
         $small = microtime(true)+$this->t;

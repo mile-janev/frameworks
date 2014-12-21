@@ -169,21 +169,6 @@
                     </div>
                 </div>
                 
-                <div id="all-methods-database" class="block-wrapper">
-                    <h2>All methods per table size</h2>
-                    <div class="block-description">
-                        This example is average execution time for all methods from one framework per table size.
-                        In the diagram below we are comparing all methods from one framework
-                        how they will act with different table sizes.
-                    </div>
-                    <div class="block-chart">
-                        <div id="chart0-all"></div>
-                    </div>
-                    <div class="block-description">
-                        This diagram show us the same result as before, that Codeigniter is fastest framework.
-                    </div>
-                </div>
-                
                 <div id="selectall" class="block-wrapper">
                     <h2>Select all records</h2>
                     <div class="block-description">
@@ -195,7 +180,7 @@
                     </div>
                     <div class="block-description">
                         Diagram above shows us that for selecting all records from table
-                        Zend is always fastest, no mather how many records we have in our table.
+                        Codeigniter is always fastest, no mather how many records we have in our table.
                     </div>
                 </div>
                 
@@ -220,6 +205,21 @@
                     </div>
                     <div class="block-chart">
                         <div id="chart3-all"></div>
+                    </div>
+                </div>
+                
+                <div id="all-methods-database" class="block-wrapper">
+                    <h2>All methods per table size</h2>
+                    <div class="block-description">
+                        This example is average execution time for all methods from one framework per table size.
+                        In the diagram below we are comparing all methods from one framework
+                        how they will act with different table sizes.
+                    </div>
+                    <div class="block-chart">
+                        <div id="chart0-all"></div>
+                    </div>
+                    <div class="block-description">
+                        This diagram show us that Codeigniter is the fastest framework, second is Yii and Zend is the slowest one.
                     </div>
                 </div>
                 

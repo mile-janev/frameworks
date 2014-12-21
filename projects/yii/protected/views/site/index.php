@@ -104,7 +104,7 @@
         <div class="block-description">
             <p>
                 Chart above shows us that fastest method
-                for selecting data in Zend is fetchAll() method.
+                for selecting data in Yii is findBySql() method.
             </p>
         </div>
     </div>
@@ -114,9 +114,8 @@
         <div class="block-description">
             <p>
                 All of these methods will return one record from database. 
-                A bit different is findByPk() method who search only by primary key.
-                From comparing these methods we can conclude that findByPk() is fastest.
-                If we need to search by attribute, than the first option needs to be findByAttributes().
+                From comparing these methods we can conclude that findBySql() is fastest,
+                followed by findByPk(), findByAttributes() and find() is last.
             </p>
         </div>
         <div class="block-chart">
@@ -129,8 +128,7 @@
         <div class="block-description">
             <p>
                 All of these methods return us all result from database which will satisfy the query.
-                First option (after findAllByPk()) needs to be findByAttributes(), a parallel method of 
-                findByAttributes().
+                Performances order is as follows:  findAllBySql(), findAllByPk(), findAllByAttributes(), findAll().
             </p>
         </div>
         <div class="block-chart">

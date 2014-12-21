@@ -77,7 +77,7 @@
         <div class="block-description">
             <p>
                 Chart above shows us that fastest method
-                for selecting data in Zend is fetchAll() method.
+                for selecting data in Zend is fetchAll() method, than fetchRow(), find() and Zend_Db_Select.
             </p>
         </div>
     </div>
@@ -131,7 +131,7 @@
             ['find()', <?php echo $this->find_zend['small']; ?>, <?php echo $this->find_zend['medium']; ?>, <?php echo $this->find_zend['large']; ?>, <?php echo $this->find_zend['average']; ?>],
             ['fetchRow()', <?php echo $this->fetchRow_zend['small']; ?>, <?php echo $this->fetchRow_zend['medium']; ?>, <?php echo $this->fetchRow_zend['large']; ?>, <?php echo $this->fetchRow_zend['average']; ?>],
             ['fetchAll()', <?php echo $this->fetchAll_zend['small']; ?>, <?php echo $this->fetchAll_zend['medium']; ?>, <?php echo $this->fetchAll_zend['large']; ?>, <?php echo $this->fetchAll_zend['average']; ?>],
-            ['Zend_Db_Select()', <?php echo $this->dbselect_zend['small']; ?>, <?php echo $this->dbselect_zend['medium']; ?>, <?php echo $this->dbselect_zend['large']; ?>, <?php echo $this->dbselect_zend['average']; ?>]
+            ['Zend_Db_Select', <?php echo $this->dbselect_zend['small']; ?>, <?php echo $this->dbselect_zend['medium']; ?>, <?php echo $this->dbselect_zend['large']; ?>, <?php echo $this->dbselect_zend['average']; ?>]
         ]);
         var options = {
             title: 'find(), fetchRow(), fetchAll(), Zend_Db_Select in Zend',

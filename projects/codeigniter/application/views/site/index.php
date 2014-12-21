@@ -128,7 +128,8 @@
                         <div class="block-description">
                             <p>
                                 Chart above shows us that fastest method
-                                for selecting data in Codeigniter is query() method.
+                                for selecting data in Codeigniter is query() method,
+                                than get_where() and get().
                             </p>
                         </div>
                     </div>
