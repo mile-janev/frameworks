@@ -131,6 +131,9 @@ table tr th{
 strong, b{
     font-weight: bold;
 }
+.blue {
+    color: #1a5e83;
+}
 
 /*My style start from here*/
 /*Menu design*/
